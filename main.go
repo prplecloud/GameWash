@@ -14,9 +14,24 @@ func main() {
 		return
 	}
 
-	http.HandleFunc("index", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/index", func(w http.ResponseWriter, r *http.Request) {
 
-		temp.ExecuteTemplate(w, "indextemp", nil)
+		temp.ExecuteTemplate(w, "index", nil)
+	})
+
+	http.HandleFunc("/compet", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "compet", nil)
+	})
+
+	http.HandleFunc("/vrac", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "vrac", nil)
+	})
+
+	http.HandleFunc("/coeur", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "coeur", nil)
 	})
 
 	rootDoc, _ := os.Getwd()
