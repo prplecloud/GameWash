@@ -14,9 +14,9 @@ func main() {
 		return
 	}
 
-	http.HandleFunc("/index", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
 
-		temp.ExecuteTemplate(w, "index", nil)
+		temp.ExecuteTemplate(w, "home", nil)
 	})
 
 	http.HandleFunc("/compet", func(w http.ResponseWriter, r *http.Request) {
@@ -37,6 +37,26 @@ func main() {
 	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
 
 		temp.ExecuteTemplate(w, "login", nil)
+	})
+
+	http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "contact", nil)
+	})
+
+	http.HandleFunc("/error", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "error", nil)
+	})
+
+	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "about", nil)
+	})
+
+	http.HandleFunc("/admin", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "admin", nil)
 	})
 
 	rootDoc, _ := os.Getwd()
