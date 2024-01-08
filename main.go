@@ -34,6 +34,11 @@ func main() {
 		temp.ExecuteTemplate(w, "coeur", nil)
 	})
 
+	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "login", nil)
+	})
+
 	rootDoc, _ := os.Getwd()
 	fileserver := http.FileServer(http.Dir(rootDoc + "/asset"))
 	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
