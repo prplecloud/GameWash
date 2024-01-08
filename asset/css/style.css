@@ -42,19 +42,31 @@ header{
     width: 100%;
 }
 
-header .nav-bar{
-    position: relative;
+/*header .nav-bar{
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(20px);
-    height: 4em;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     top: 0;
     left: 0;
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
     align-items: center;
     padding: 0 150px;
     transition: 0.5s ease;
+    height: 100%;
+}*/
+
+header .nav-bar {
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+    flex-direction: row;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+#title-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .nav-bar .logo{
@@ -64,16 +76,36 @@ header .nav-bar{
     letter-spacing: 2px;
     text-transform: uppercase;
     text-decoration: none;
+    width: 10rem;
+}
+
+.title {
+    
+    color: white;
+    position: sticky;
+    font-size: 35px;
+}
+
+.navigation {
+    display: flex;
+    flex-flow: row wrap;
+    margin-right: 2%;
 }
 
 .navigation .nav-items a{
     color: #fff;
-    font-size: 1em;
+    font-size: 1.2em;
     text-decoration: none;
+    display: inline;
+    /*border: solid white 2px;*/
 }
 
 .navigation .nav-items a:not(:last-child){
     margin-right: 50px;
+}
+
+header {
+    height: 20vh;
 }
 
 .navigation .nav-items a i{
@@ -165,7 +197,7 @@ section{
 }
 
 /*======= Media queries (max-width: 1100px) =======*/
-@media screen and (max-width: 1100px){
+@media screen and (max-width: px){
     header .nav-bar{
         padding: 0 50px;
     }
@@ -177,7 +209,7 @@ section{
 }
 
 /*======= Media queries (max-width: 850px) =======*/
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1100px) {
     header .nav-bar {
         padding: 0 20px;
     }
