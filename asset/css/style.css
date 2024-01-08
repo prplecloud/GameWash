@@ -82,6 +82,7 @@ header .nav-bar{
 
 /*======= Home =======*/
 section{
+    background-color: #d2abca;
     position: relative;
     font-size: 1em;
     padding: 30px 150px;
@@ -91,10 +92,8 @@ section{
 
 .home{
     position: relative;
+    background-color: #d2abca;
     min-height: 100vh;
-    background: url(home-bg.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,7 +105,7 @@ section{
     position: absolute;
     width: 100%;
     height: 50px;
-    background: linear-gradient(transparent, #000116);
+    background: linear-gradient(transparent, #d2abca);
     bottom: 0;
     left: 0;
 }
@@ -154,11 +153,11 @@ section{
 }
 
 .scroll-indicator-bar{
-    background: #199fff;
+    background: #FFCF4F;
     width: 0%;
     height: 100%;
-    box-shadow: 0 5px 25px #199fff,
-                0 5px 50px #199fff;
+    box-shadow: 0 5px 25px #FFCF4F,
+                0 5px 50px #FFCF4F;
 }
 
 .nav-close-btn, .nav-menu-btn{
