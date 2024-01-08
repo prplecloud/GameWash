@@ -1,0 +1,30 @@
+{
+    "utilisateurs": [
+      {
+        "id": 1,
+        "nom": "Luca",
+        "email": "luca@example.com",
+        "mot_de_passe": "motdepasse123"
+      },
+      {
+        "id": 2,
+        "nom": "Morgane",
+        "email": "morgane@example.com",
+        "mot_de_passe": "motdepasse456"
+      },
+      {
+        "id": 3,
+        "nom": "Corentin",
+        "email": "corentin@example.com",
+        "mot_de_passe": "motdepasse789"
+      },
+      {
+        "id": 4,
+        "nom": "abdallah",
+        "email": "abdallah@example.com",
+        "mot_de_passe": "motdepasse789"
+      }
+
+    ]
+  }
+  
