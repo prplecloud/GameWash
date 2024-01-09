@@ -8,17 +8,18 @@
     <link rel="stylesheet" href="static/css/admin.css">
 </head>
 <body>
-    <form method="POST" action="/compet">
+    <a class="retour" href="http://localhost:8080/home"><i class="fa-solid fa-arrow-left"></i>&#8592; Retour</a>
+    <form class="form" method="POST" action="/compet">
         <i class=""></i>
         <label for="categorie">Catégorie</label>
-            <select name="categorie" id="categorie" multiple>
+            <select class="select" name="categorie" id="categorie" multiple>
                  <option value="Compétitif">Compétitif</option>
                  <option value="Jeux en Vrac">Jeux en Vrac</option>
                  <option value="Coup de Coeur">Coup de Coeur</option>
             </select>
         <p class=""></p>
         <label for="categorie">Auteur</label>
-        <select name="Auteur" id="Auteur" multiple>
+        <select class="select" name="Auteur" id="Auteur" multiple>
              <option value="Corentin">Corentin</option>
              <option value="Abdallah">Abdallah</option>
              <option value="Morgane">Morgane</option>
