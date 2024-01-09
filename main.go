@@ -12,6 +12,22 @@ type Login struct {
 	Passwd   string
 }
 
+type Glaoui struct {
+	Articles []struct {
+		Categorie string `json:"categorie"`
+		Titre     string `json:"titre"`
+		Auteur    string `json:"auteur"`
+		Contenu   string `json:"contenu"`
+		Images    []struct {
+			Platform   string `json:"platform"`
+			Background string `json:"background"`
+			Studio     string `json:"studio"`
+			Gameplay   string `json:"gameplay"`
+		} `json:"images"`
+		URL string `json:"url"`
+	} `json:"articles"`
+}
+
 var logs Login
 
 func main() {
