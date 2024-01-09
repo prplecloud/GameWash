@@ -85,19 +85,19 @@
       }
     },
     {
-      "categorie": "jeux en vrac / coup de coeur",
+      "categorie": "Coups de coeur",
       "titre": "Outer Wilds",
       "auteur": "Mobius Digital",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/outerwilds/outerwilds_map.png",
-        "background": "static/image/jeux en vrac/outerwilds/outerwilds.png",
-        "studio": "static/image/jeux en vrac/outerwilds/outerwilds_buipo.png",
-        "gameplay": "static/image/jeux en vrac/outerwilds/outerwilds_gameplay.png"
+        "platform": "static/image/coups de coeur/outerwilds/outerwilds_map.png",
+        "background": "static/image/coups de coeur/outerwilds/outerwilds.png",
+        "studio": "static/image/coups de coeur/outerwilds/outerwilds_buipo.png",
+        "gameplay": "static/image/coups de coeur/outerwilds/outerwilds_gameplay.png"
       }
     },
     {
-      "categorie": "jeux en vrac",
+      "categorie": "Jeux en vrac",
       "titre": "Dark Souls 3",
       "auteur": "FromSoftware",
       "contenu": "...",
@@ -109,139 +109,139 @@
       }
     },
     {
-      "categorie": "Action-Adventure",
+      "categorie": "Coups de coeur",
       "titre": "Elden Ring",
       "auteur": "FromSoftware",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/elden ring/eldenmap.png",
-        "background": "static/image/jeux en vrac/elden ring/eldenring.png",
-        "studio": "static/image/jeux en vrac/elden ring/from_software.png",
-        "gameplay": "static/image/jeux en vrac/elden ring/malenia.png"
+        "platform": "static/image/coups de coeur/elden ring/eldenmap.png",
+        "background": "static/image/coups de coeur/elden ring/eldenring.png",
+        "studio": "static/image/coups de coeur/elden ring/from_software.png",
+        "gameplay": "static/image/coups de coeur/elden ring/malenia.png"
       }
     },
     {
-      "categorie": "Simulation",
+      "categorie": "Jeux en vrac",
       "titre": "Stardew Valley",
       "auteur": "ConcernedApe",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/stardewvalley/platform.png",
-        "background": "static/image/jeux en vrac/stardewvalley/background.png",
-        "studio": "static/image/jeux en vrac/stardewvalley/studio.png",
-        "gameplay": "static/image/jeux en vrac/stardewvalley/gameplay.png"
+        "platform": "static/image/jeux en vrac/stardewvalley/stardew_valley.png",
+        "background": "static/image/jeux en vrac/stardewvalley/stardewvalley.png",
+        "studio": "static/image/jeux en vrac/stardewvalley/chukle.png",
+        "gameplay": "static/image/jeux en vrac/stardewvalley/stardewvalley_gameplay.png"
       }
     },
     {
-      "categorie": "jeux en vrac",
+      "categorie": "Jeux en vrac",
       "titre": "Minecraft",
       "auteur": "Mojang Studios",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/minecraft/platform.png",
-        "background": "static/image/jeux en vrac/minecraft/background.png",
-        "studio": "static/image/jeux en vrac/minecraft/studio.png",
-        "gameplay": "static/image/jeux en vrac/minecraft/gameplay.png"      
+        "platform": "static/image/jeux en vrac/minecraft/mc_gameplay.png",
+        "background": "static/image/jeux en vrac/minecraft/minecraft.png",
+        "studio": "static/image/jeux en vrac/minecraft/mojang.png",
+        "gameplay": "static/image/jeux en vrac/minecraft/mc_gameplay2.png"      
       }
     },
     {
-      "categorie": "jeux en vrac",
+      "categorie": "Jeux en vrac",
       "titre": "Roblox",
       "auteur": "Roblox Corporation",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/roblox/platform.png",
-        "background": "static/image/jeux en vrac/roblox/background.png",
-        "studio": "static/image/jeux en vrac/roblox/studio.png",
-        "gameplay": "static/image/jeux en vrac/roblox/gameplay.png"     
+        "platform": "static/image/jeux en vrac/roblox/roblox_gameplay.png",
+        "background": "static/image/jeux en vrac/roblox/roblox.png",
+        "studio": "static/image/jeux en vrac/roblox/rp_roblox.png",
+        "gameplay": "static/image/jeux en vrac/roblox/serv_roblox.png"     
        }
     },
     {
-      "categorie": "jeux en vrac",
+      "categorie": "Jeux en vrac",
       "titre": "Geometry Dash",
       "auteur": "RobTop Games",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/geometrydash/platform.png",
-        "background": "static/image/jeux en vrac/geometrydash/background.png",
-        "studio": "static/image/jeux en vrac/geometrydash/studio.png",
-        "gameplay": "static/image/jeux en vrac/geometrydash/gameplay.png"
+        "platform": "static/image/jeux en vrac/geometrydash/geometrydash_lobby.png",
+        "background": "static/image/jeux en vrac/geometrydash/geometrydash.png",
+        "studio": "static/image/jeux en vrac/geometrydash/robtop.png",
+        "gameplay": "static/image/jeux en vrac/geometrydash/geometrydash_gameplay.png"
       }
     },
     {
-      "categorie": "Action-Adventure",
+      "categorie": "Coups de coeur",
       "titre": "Majora’s Mask",
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/majorasmask/platform.png",
-        "background": "static/image/jeux en vrac/majorasmask/background.png",
-        "studio": "static/image/jeux en vrac/majorasmask/studio.png",
-        "gameplay": "static/image/jeux en vrac/majorasmask/gameplay.png"
+        "platform": "static/image/coups de coeur/majorasmask/majoras_mask_map.png",
+        "background": "static/image/coups de coeur/majorasmask/majoras_mask.png",
+        "studio": "static/image/coups de coeur/majorasmask/Nintendo.png",
+        "gameplay": "static/image/coups de coeur/majorasmask/majoras_mask_gameplay.png"
       }
     },
     {
-      "categorie": "Survie",
+      "categorie": "Coups de coeur",
       "titre": "Subnautica",
       "auteur": "Unknown Worlds Entertainment",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/subnautica/platform.png",
-        "background": "static/image/jeux en vrac/subnautica/background.png",
-        "studio": "static/image/jeux en vrac/subnautica/studio.png",
-        "gameplay": "static/image/jeux en vrac/subnautica/gameplay.png"     
+        "platform": "static/image/coups de coeur/subnautica/subnautica_map.png",
+        "background": "static/image/coups de coeur/subnautica/subnautica.png",
+        "studio": "static/image/coups de coeur/subnautica/unknown.png",
+        "gameplay": "static/image/coups de coeur/subnautica/Subnautica_gameplay.png"     
        }
     },
     {
-      "categorie": "Simulation",
+      "categorie": "Jeux en vrac",
       "titre": "Slime Rancher",
       "auteur": "Monomi Park",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/pokemonnoir2/platform.png",
-        "background": "static/image/jeux en vrac/pokemonnoir2/background.png",
-        "studio": "static/image/jeux en vrac/pokemonnoir2/studio.png",
-        "gameplay": "static/image/jeux en vrac/pokemonnoir2/gameplay.png"
+        "platform": "static/image/jeux en vrac/slime rancher/sr_map.png",
+        "background": "static/image/jeux en vrac/slime rancher/sr.png",
+        "studio": "static/image/jeux en vrac/slime rancher/monomi.png",
+        "gameplay": "static/image/jeux en vrac/slime rancher/sr_gameplay.png"
       }
     },
     {
-      "categorie": "RPG",
+      "categorie": "Coups de coeur",
       "titre": "Pokémon Noir 2",
       "auteur": "Game Freak",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/pokemonnoir2/platform.png",
-        "background": "static/image/jeux en vrac/pokemonnoir2/background.png",
-        "studio": "static/image/jeux en vrac/pokemonnoir2/studio.png",
-        "gameplay": "static/image/jeux en vrac/pokemonnoir2/gameplay.png"
+        "platform": "static/image/coups de coeur/pokemon noir 2/pokemon_map.png",
+        "background": "static/image/coups de coeur/pokemon noir 2/pokemon.png",
+        "studio": "static/image/coups de coeur/pokemon noir 2/Nintendo.png",
+        "gameplay": "static/image/coups de coeur/pokemon noir 2/pokemon_N.png"
       }
     },
     {
-      "categorie": "FPS",
+      "categorie": "Jeux en vrac",
       "titre": "Destiny 1",
       "auteur": "Bungie",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/destiny1/platform.png",
-        "background": "static/image/jeux en vrac/destiny1/background.png",
-        "studio": "static/image/jeux en vrac/destiny1/studio.png",
-        "gameplay": "static/image/jeux en vrac/destiny1/gameplay.png"     
+        "platform": "static/image/jeux en vrac/destiny/destiny_map.png",
+        "background": "static/image/jeux en vrac/destiny/Destiny.png",
+        "studio": "static/image/jeux en vrac/destiny/bungie.png",
+        "gameplay": "static/image/jeux en vrac/destiny/oryx.png"     
        }
     },
     {
-      "categorie": "Course",
+      "categorie": "Coups de coeur",
       "titre": "Mario Kart",
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/mario kart/mariomaps.png",
-        "background": "static/image/jeux en vrac/mario kart/mariokart.png",
-        "studio": "static/image/jeux en vrac/mario kart/Nintendo.png",
-        "gameplay": "static/image/jeux en vrac/mario kart/mariogameplay.png"
+        "platform": "static/image/coups de coeur/mario kart/mariomaps.png",
+        "background": "static/image/coups de coeur/mario kart/mariokart.png",
+        "studio": "static/image/coups de coeur/mario kart/Nintendo.png",
+        "gameplay": "static/image/coups de coeur/mario kart/mariogameplay.png"
       }
     },
     {
-      "categorie": "Action-Adventure",
+      "categorie": "Jeux en vrac",
       "titre": "The Legend of Zelda: Ocarina of Time",
       "auteur": "Nintendo",
       "contenu": "...",
@@ -253,7 +253,7 @@
       }
     },
     {
-      "categorie": "Action-Adventure",
+      "categorie": "Jeux en vrac",
       "titre": "The Legend of Zelda: A Link to the Past",
       "auteur": "Nintendo",
       "contenu": "...",
@@ -265,19 +265,19 @@
       }
     },
     {
-      "categorie": "Action-Adventure",
+      "categorie": "Coups de coeur",
       "titre": "Super Mario 64",
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/mario64/platform.png",
-        "background": "static/image/jeux en vrac/mario64/background.png",
-        "studio": "static/image/jeux en vrac/mario64/studio.png",
-        "gameplay": "static/image/jeux en vrac/mario64/gameplay.png"
+        "platform": "static/image/coups de coeur/mario64/mario64_pingouin.png",
+        "background": "static/image/coups de coeur/mario64/mario64.png",
+        "studio": "static/image/coups de coeur/mario64/Nintendo.png",
+        "gameplay": "static/image/coups de coeur/mario64/mario64_gameplay.png"
       }
     },
     {
-      "categorie": "Action-Adventure",
+      "categorie": "Jeux en vrac",
       "titre": "Sonic Unleashed",
       "auteur": "Sega",
       "contenu": "...",
@@ -289,17 +289,76 @@
       }
     },
     {
-      "categorie": "Combat",
+      "categorie": "Compétitif",
       "titre": "Super Smash Bros.",
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/compétitif/smashbros/platform.png",
-        "background": "static/image/compétitif/smashbros/background.png",
-        "studio": "static/image/compétitif/smashbros/studio.png",
-        "gameplay": "static/image/compétitif/smashbros/gameplay.png"
+        "platform": "static/image/compétitif/smashbros/smaash_map.png",
+        "background": "static/image/compétitif/smashbros/smashbros.png",
+        "studio": "static/image/compétitif/smashbros/Nintendo.png",
+        "gameplay": "static/image/compétitif/smashbros/smash_gameplay.png"
       }
-    }
-        
+    },
+    {
+      "categorie": "Compétitif",
+      "titre": "Black Ops 2",
+      "auteur": "Activision",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/compétitif/bo2/bo2_map.png",
+        "background": "static/image/compétitif/bo2/bo2.png",
+        "studio": "static/image/compétitifc/bo2/treyarch.png",
+        "gameplay": "static/image/compétitif/bo2/bo2_gameplay.png"
+      }
+    },
+    {
+      "categorie": "Compétitif",
+      "titre": "Rocket League",
+      "auteur": "Psyonix",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/compétitif/rocketleague/maprl.png",
+        "background": "static/image/compétitif/rocketleague/rocketleague.png",
+        "studio": "static/image/compétitif/rocketleague/psyonix.png",
+        "gameplay": "static/image/compétitif/rocketleague/rocketleague_gameplay.png"
+      }
+    },
+    {
+      "categorie": "Coups de coeur",
+      "titre": "GTA V",
+      "auteur": "Rockstar Games",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/coups de coeur/GTA 5/gta_map.png",
+        "background": "static/image/coups de coeur/GTA 5/gta.png",
+        "studio": "static/image/coups de coeur/GTA 5/rockstargames.png",
+        "gameplay": "static/image/coups de coeur/GTA 5/gta_gameplay.png"
+      }
+    },
+    {
+      "categorie": "Coups de coeur",
+      "titre": "No Man's Sky",
+      "auteur": "Hello Games",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/coups de coeur/nomanssky/nomanssky_starship.png",
+        "background": "static/image/coups de coeur/nomanssky/nomanssky.png",
+        "studio": "static/image/coups de coeur/nomanssky/hellogames.png",
+        "gameplay": "static/image/coups de coeur/nomanssky/nomanssky_gameplay.png"
+      }
+    },
+    {
+      "categorie": "Coups de coeur",
+      "titre": "Bully",
+      "auteur": "Rockstar Games",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/coups de coeur/bully/Bully_Map.png",
+        "background": "static/image/coups de coeur/bully/bully.png",
+        "studio": "static/image/coups de coeur/bully/rockstargames.png",
+        "gameplay": "static/image/coups de coeur/bully/bully_gameplay.png"
+      }
+    }  
   ]
 }
