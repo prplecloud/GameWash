@@ -6,10 +6,10 @@
       "auteur": "Riot Games",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_tft.jpg",
-        "background": "chemin/vers/image_background_tft.jpg",
-        "studio": "chemin/vers/image_studio_tft.jpg",
-        "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+        "platform": "asset/image/compétitif/tft/carrousel.png",
+        "background": "asset/image/compétitif/tft/megaremix.png",
+        "studio": "asset/image/compétitif/tft/riot.png",
+        "gameplay": "asset/image/compétitif/tft/tft_gameplay.png"
       }
     },    
     {
@@ -18,10 +18,10 @@
       "auteur": "Ubisoft",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_r6.jpg",
+        "platform": "asset/image/compétitif/r6/r6.png",
         "background": "chemin/vers/image_background_r6.jpg",
-        "studio": "chemin/vers/image_studio_r6.jpg",
-        "gameplay": "chemin/vers/image_gameplay_r6.jpg"
+        "studio": "asset/image/compétitif/r6/ubi.png",
+        "gameplay": "asset/image/compétitif/r6/r6_gameplay.png"
       }
     },
     {
@@ -30,10 +30,10 @@
       "auteur": "Riot Games",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform.jpg",
-        "background": "chemin/vers/image_background.jpg",
-        "studio": "chemin/vers/image_studio.jpg",
-        "gameplay": "chemin/vers/image_gameplay.jpg"
+        "platform": "asset/image/compétitif/lol/lolmap.png",
+        "background": "asset/image/compétitif/lol/lol.png",
+        "studio": "asset/image/compétitif/lol/riot.png",
+        "gameplay": "asset/image/compétitif/lol/shaco.png"
       }
     },
      {
@@ -42,10 +42,10 @@
       "auteur": "Valve Corporation",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_csgo.jpg",
-        "background": "chemin/vers/image_background_csgo.jpg",
-        "studio": "chemin/vers/image_studio_csgo.jpg",
-        "gameplay": "chemin/vers/image_gameplay_csgo.jpg"
+        "platform": "asset/image/compétitif/cs2/cs2_maps.png",
+        "background": "asset/image/compétitif/cs2/cs2.png",
+        "studio": "asset/image/compétitif/cs2/valve.png",
+        "gameplay": "asset/image/compétitif/cs2/cs2_gameplay.png"
       }
     },
     {
@@ -55,9 +55,9 @@
       "contenu": "...",
       "images": {
         "platform": "chemin/vers/image_platform_finals.jpg",
-        "background": "chemin/vers/image_background_finals.jpg",
-        "studio": "chemin/vers/image_studio_finals.jpg",
-        "gameplay": "chemin/vers/image_gameplay_finals.jpg"
+        "background": "asset/image/compétitif/the finals/thefinals.png",
+        "studio": "asset/image/compétitif/the finals/embark.png",
+        "gameplay": "asset/image/compétitif/the finals\thefinals_gameplay.png"
       }
     },
     {
@@ -66,10 +66,10 @@
       "auteur": "Battlestate Games",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_tarkov.jpg",
-        "background": "chemin/vers/image_background_tarkov.jpg",
-        "studio": "chemin/vers/image_studio_tarkov.jpg",
-        "gameplay": "chemin/vers/image_gameplay_tarkov.jpg"
+        "platform": "asset/image/compétitif/escape from tarkov/tarkov_map.png",
+        "background": "asset/image/compétitif/escape from tarkov/tarkov.png",
+        "studio": "asset/image/compétitif/escape from tarkov/battlestate.png",
+        "gameplay": "asset/image/compétitif/thefinals/thefinals.png"
       }
     },
     {
@@ -78,10 +78,10 @@
       "auteur": "EA Sports",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_fifa24.jpg",
-        "background": "chemin/vers/image_background_fifa24.jpg",
-        "studio": "chemin/vers/image_studio_fifa24.jpg",
-        "gameplay": "chemin/vers/image_gameplay_fifa24.jpg"
+        "platform": "asset/image/compétitif/fifa/compo.png",
+        "background": "asset/image/compétitif/fifa/fifa24.pngg",
+        "studio": "asset/image/compétitif/fifa/EA.png",
+        "gameplay": "asset/image/compétitif/fifa/fifa24_gameplay.png"
       }
     },
     {
@@ -90,10 +90,10 @@
       "auteur": "Mobius Digital",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_outerwilds.jpg",
-        "background": "chemin/vers/image_background_outerwilds.jpg",
-        "studio": "chemin/vers/image_studio_outerwilds.jpg",
-        "gameplay": "chemin/vers/image_gameplay_outerwilds.jpg"
+        "platform": "asset/image/jeux en vrac/outerwilds/outerwilds_map.png",
+        "background": "asset/image/jeux en vrac/outerwilds/outerwilds.png",
+        "studio": "asset/image/jeux en vrac/outerwilds/outerwilds_buipo.png",
+        "gameplay": "asset/image/jeux en vrac/outerwilds/outerwilds_gameplay.png"
       }
     },
     {
@@ -121,7 +121,7 @@
       }
     },
     {
-      "categorie": "Simulation",
+      "categorie": "jeux en vrac",
       "titre": "Stardew Valley",
       "auteur": "ConcernedApe",
       "contenu": "...",
@@ -193,7 +193,7 @@
       }
     },
     {
-      "categorie": "Simulation",
+      "categorie": "jeux en vrac",
       "titre": "Slime Rancher",
       "auteur": "Monomi Park",
       "contenu": "...",
