@@ -5,10 +5,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/admin.css">
 </head>
 <body>
-    
+    <a class="retour" href="http://localhost:8080/home"><i class="fa-solid fa-arrow-left"></i>&#8592; Retour</a>
+    <form class="form" method="POST" action="/compet">
+        <i class=""></i>
+        <label for="categorie">Catégorie</label>
+            <select class="select" name="categorie" id="categorie" multiple>
+                 <option value="Compétitif">Compétitif</option>
+                 <option value="Jeux en Vrac">Jeux en Vrac</option>
+                 <option value="Coup de Coeur">Coup de Coeur</option>
+            </select>
+        <p class=""></p>
+        <label for="categorie">Auteur</label>
+        <select class="select" name="Auteur" id="Auteur" multiple>
+             <option value="Corentin">Corentin</option>
+             <option value="Abdallah">Abdallah</option>
+             <option value="Morgane">Morgane</option>
+             <option value="Luca">Luca</option>
+        </select>
+        <p class=""></p>
+            <input type="date" value="2024-01-01" />
+        <label for="Introduction">Introduction</label>
+
+            <textarea id="introduction" name="Introduction" rows="1" cols="50">
+        </textarea>
+        <label for="Text">Texte</label>
+
+            <textarea id="Text" name="Texte" rows="7" cols="100">
+        </textarea>
+        <button type="submit">Publier</button>
+    </form>
 </body>
 </html>
 {{end}}
