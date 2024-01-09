@@ -334,3 +334,41 @@ footer {
                0 0 100px rgb(255, 255, 255)
 }
 
+.search-box {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #B895B0;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+    width: 40%;
+}
+.search-box:hover > .search-txt {
+	width: 240px;
+	padding: 0 6px;
+}
+
+
+
+.search-txt {			
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	color: white;
+	font-size: 20px;
+	transition: 0.4s;
+	line-height: 10px;	
+	width: 0px;
+}
+
+.loupe {
+    height: 2vh;
+} 
+
+.loupebtn {
+    background-color: #B895B0;
+    border: none;
+}
