@@ -7,6 +7,13 @@ import (
 	"os"
 )
 
+type Login struct {
+	Username string
+	Passwd   string
+}
+
+var logs Login
+
 func main() {
 	temp, err := template.ParseGlob("./templates/*.html")
 	if err != nil {
@@ -35,6 +42,12 @@ func main() {
 	})
 
 	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
+
+		temp.ExecuteTemplate(w, "login", nil)
+	})
+
+	http.HandleFunc("/login/treatment", func(w http.ResponseWriter, r *http.Request) {
+		logs = Login{r.FormValue("Username"), r.FormValue("Passwd")}
 
 		temp.ExecuteTemplate(w, "login", nil)
 	})

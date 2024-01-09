@@ -9,11 +9,14 @@
 </head>
 <body>
     
-		<form action="/login" method="post">
-			Username:<input type="text" name="username">
-			Password:<input type="password" name="password">
-			<input type="submit" value="Login">
-		</form>
+    <form method="POST" action="/admin">
+        <i class="fa fa-user fa-5x"></i>
+        <input id="UserName" name="UserName" placeholder="Entrer votre pseudo" autofocus required>
+        <p class="form-field-err"></p>
+        <input id="Password" name="Password" type="password" placeholder="Entrer votre mot de passe" required>
+        <p class="form-field-err"></p>
+        <button type="submit">Envoyer</button>
+    </form>
 
 </body>
 </html>
