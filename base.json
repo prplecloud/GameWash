@@ -6,10 +6,17 @@
       "auteur": "Riot Games",
       "contenu": "...",
       "images": {
+<<<<<<< Updated upstream
         "platform": "chemin/vers/image_platform_tft.jpg",
         "background": "chemin/vers/image_background_tft.jpg",
         "studio": "chemin/vers/image_studio_tft.jpg",
         "gameplay": "chemin/vers/image_gameplay_tft.jpg"
+=======
+        "platform": "static/image/compétitif/tft/carrousel.png",
+        "background": "static/image/compétitif/tft/megaremix.png",
+        "studio": "static/image/compétitif/tft/riot.png",
+        "gameplay": "static/image/compétitif/tft/tft_gameplay.png"
+>>>>>>> Stashed changes
       }
     },    
     {
@@ -18,10 +25,17 @@
       "auteur": "Ubisoft",
       "contenu": "...",
       "images": {
+<<<<<<< Updated upstream
         "platform": "chemin/vers/image_platform_r6.jpg",
         "background": "chemin/vers/image_background_r6.jpg",
         "studio": "chemin/vers/image_studio_r6.jpg",
         "gameplay": "chemin/vers/image_gameplay_r6.jpg"
+=======
+        "platform": "static/image/compétitif/r6/r6.png",
+        "background": "chemin/vers/image_background_r6.jpg",
+        "studio": "static/image/compétitif/r6/ubi.png",
+        "gameplay": "static/image/compétitif/r6/r6_gameplay.png"
+>>>>>>> Stashed changes
       }
     },
     {
@@ -30,10 +44,17 @@
       "auteur": "Riot Games",
       "contenu": "...",
       "images": {
+<<<<<<< Updated upstream
         "platform": "chemin/vers/image_platform.jpg",
         "background": "chemin/vers/image_background.jpg",
         "studio": "chemin/vers/image_studio.jpg",
         "gameplay": "chemin/vers/image_gameplay.jpg"
+=======
+        "platform": "static/image/compétitif/lol/lolmap.png",
+        "background": "static/image/compétitif/lol/lol.png",
+        "studio": "static/image/compétitif/lol/riot.png",
+        "gameplay": "static/image/compétitif/lol/shaco.png"
+>>>>>>> Stashed changes
       }
     },
      {
@@ -42,10 +63,17 @@
       "auteur": "Valve Corporation",
       "contenu": "...",
       "images": {
+<<<<<<< Updated upstream
         "platform": "chemin/vers/image_platform_csgo.jpg",
         "background": "chemin/vers/image_background_csgo.jpg",
         "studio": "chemin/vers/image_studio_csgo.jpg",
         "gameplay": "chemin/vers/image_gameplay_csgo.jpg"
+=======
+        "platform": "static/image/compétitif/cs2/cs2_maps.png",
+        "background": "static/image/compétitif/cs2/cs2.png",
+        "studio": "static/image/compétitif/cs2/valve.png",
+        "gameplay": "static/image/compétitif/cs2/cs2_gameplay.png"
+>>>>>>> Stashed changes
       }
     },
     {
@@ -54,10 +82,17 @@
       "auteur": "Embark",
       "contenu": "...",
       "images": {
+<<<<<<< Updated upstream
         "platform": "chemin/vers/image_platform_finals.jpg",
         "background": "chemin/vers/image_background_finals.jpg",
         "studio": "chemin/vers/image_studio_finals.jpg",
         "gameplay": "chemin/vers/image_gameplay_finals.jpg"
+=======
+        "platform": "static/image/compétitif/thefinals_map.png",
+        "background": "static/image/compétitif/the finals/thefinals.png",
+        "studio": "static/image/compétitif/the finals/embark.png",
+        "gameplay": "static/image/compétitif/the finals/thefinals_gameplay.png"
+>>>>>>> Stashed changes
       }
     },
     {
@@ -66,10 +101,17 @@
       "auteur": "Battlestate Games",
       "contenu": "...",
       "images": {
+<<<<<<< Updated upstream
         "platform": "chemin/vers/image_platform_tarkov.jpg",
         "background": "chemin/vers/image_background_tarkov.jpg",
         "studio": "chemin/vers/image_studio_tarkov.jpg",
         "gameplay": "chemin/vers/image_gameplay_tarkov.jpg"
+=======
+        "platform": "static/image/compétitif/escape from tarkov/tarkov_map.png",
+        "background": "static/image/compétitif/escape from tarkov/tarkov.png",
+        "studio": "static/image/compétitif/escape from tarkov/battlestate.png",
+        "gameplay": "static/image/compétitif/escape from tarkov/tarkov_gameplay.png"
+>>>>>>> Stashed changes
       }
     },
     {
@@ -78,10 +120,17 @@
       "auteur": "EA Sports",
       "contenu": "...",
       "images": {
+<<<<<<< Updated upstream
         "platform": "chemin/vers/image_platform_fifa24.jpg",
         "background": "chemin/vers/image_background_fifa24.jpg",
         "studio": "chemin/vers/image_studio_fifa24.jpg",
         "gameplay": "chemin/vers/image_gameplay_fifa24.jpg"
+=======
+        "platform": "static/image/compétitif/fifa/compo.png",
+        "background": "static/image/compétitif/fifa/fifa24.png",
+        "studio": "static/image/compétitif/fifa/EA.png",
+        "gameplay": "static/image/compétitif/fifa/fifa24_gameplay.png"
+>>>>>>> Stashed changes
       }
     },
     {
@@ -90,10 +139,17 @@
       "auteur": "Mobius Digital",
       "contenu": "...",
       "images": {
+<<<<<<< Updated upstream
         "platform": "chemin/vers/image_platform_outerwilds.jpg",
         "background": "chemin/vers/image_background_outerwilds.jpg",
         "studio": "chemin/vers/image_studio_outerwilds.jpg",
         "gameplay": "chemin/vers/image_gameplay_outerwilds.jpg"
+=======
+        "platform": "static/image/jeux en vrac/outerwilds/outerwilds_map.png",
+        "background": "static/image/jeux en vrac/outerwilds/outerwilds.png",
+        "studio": "static/image/jeux en vrac/outerwilds/outerwilds_buipo.png",
+        "gameplay": "static/image/jeux en vrac/outerwilds/outerwilds_gameplay.png"
+>>>>>>> Stashed changes
       }
     },
     {
@@ -102,10 +158,10 @@
       "auteur": "FromSoftware",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_darksouls3.jpg",
-        "background": "chemin/vers/image_background_darksouls3.jpg",
-        "studio": "chemin/vers/image_studio_darksouls3.jpg",
-        "gameplay": "chemin/vers/image_gameplay_darksouls3.jpg"
+        "platform": "static/image/jeux en vrac/Dark souls/ds3_gp.png",
+        "background": "static/image/jeux en vrac/Dark souls/ds3.png",
+        "studio": "static/image/jeux en vrac/Dark souls/from_software.png",
+        "gameplay": "static/image/jeux en vrac/Dark souls/ds3_gameplay.png"
       }
     },
     {
@@ -114,10 +170,10 @@
       "auteur": "FromSoftware",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_eldenring.jpg",
-        "background": "chemin/vers/image_background_eldenring.jpg",
-        "studio": "chemin/vers/image_studio_eldenring.jpg",
-        "gameplay": "chemin/vers/image_gameplay_eldenring.jpg"
+        "platform": "static/image/jeux en vrac/elden ring/eldenmap.png",
+        "background": "static/image/jeux en vrac/elden ring/eldenring.png",
+        "studio": "static/image/jeux en vrac/elden ring/from_software.png",
+        "gameplay": "static/image/jeux en vrac/elden ring/malenia.png"
       }
     },
     {
@@ -126,10 +182,10 @@
       "auteur": "ConcernedApe",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_stardewvalley.jpg",
-        "background": "chemin/vers/image_background_stardewvalley.jpg",
-        "studio": "chemin/vers/image_studio_stardewvalley.jpg",
-        "gameplay": "chemin/vers/image_gameplay_stardewvalley.jpg"
+        "platform": "static/image/jeux en vrac/stardewvalley/platform.png",
+        "background": "static/image/jeux en vrac/stardewvalley/background.png",
+        "studio": "static/image/jeux en vrac/stardewvalley/studio.png",
+        "gameplay": "static/image/jeux en vrac/stardewvalley/gameplay.png"
       }
     },
     {
@@ -138,10 +194,10 @@
       "auteur": "Mojang Studios",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_minecraft.jpg",
-        "background": "chemin/vers/image_background_minecraft.jpg",
-        "studio": "chemin/vers/image_studio_minecraft.jpg",
-        "gameplay": "chemin/vers/image_gameplay_minecraft.jpg"
+        "platform": "static/image/jeux en vrac/minecraft/platform.png",
+        "background": "static/image/jeux en vrac/minecraft/background.png",
+        "studio": "static/image/jeux en vrac/minecraft/studio.png",
+        "gameplay": "static/image/jeux en vrac/minecraft/gameplay.png"      
       }
     },
     {
@@ -150,11 +206,11 @@
       "auteur": "Roblox Corporation",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_roblox.jpg",
-        "background": "chemin/vers/image_background_roblox.jpg",
-        "studio": "chemin/vers/image_studio_roblox.jpg",
-        "gameplay": "chemin/vers/image_gameplay_roblox.jpg"
-      }
+        "platform": "static/image/jeux en vrac/roblox/platform.png",
+        "background": "static/image/jeux en vrac/roblox/background.png",
+        "studio": "static/image/jeux en vrac/roblox/studio.png",
+        "gameplay": "static/image/jeux en vrac/roblox/gameplay.png"     
+       }
     },
     {
       "categorie": "jeux en vrac",
@@ -162,10 +218,10 @@
       "auteur": "RobTop Games",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_geometrydash.jpg",
-        "background": "chemin/vers/image_background_geometrydash.jpg",
-        "studio": "chemin/vers/image_studio_geometrydash.jpg",
-        "gameplay": "chemin/vers/image_gameplay_geometrydash.jpg"
+        "platform": "static/image/jeux en vrac/geometrydash/platform.png",
+        "background": "static/image/jeux en vrac/geometrydash/background.png",
+        "studio": "static/image/jeux en vrac/geometrydash/studio.png",
+        "gameplay": "static/image/jeux en vrac/geometrydash/gameplay.png"
       }
     },
     {
@@ -174,10 +230,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_majorasmask.jpg",
-        "background": "chemin/vers/image_background_majorasmask.jpg",
-        "studio": "chemin/vers/image_studio_majorasmask.jpg",
-        "gameplay": "chemin/vers/image_gameplay_majorasmask.jpg"
+        "platform": "static/image/jeux en vrac/majorasmask/platform.png",
+        "background": "static/image/jeux en vrac/majorasmask/background.png",
+        "studio": "static/image/jeux en vrac/majorasmask/studio.png",
+        "gameplay": "static/image/jeux en vrac/majorasmask/gameplay.png"
       }
     },
     {
@@ -186,11 +242,11 @@
       "auteur": "Unknown Worlds Entertainment",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_subnautica.jpg",
-        "background": "chemin/vers/image_background_subnautica.jpg",
-        "studio": "chemin/vers/image_studio_subnautica.jpg",
-        "gameplay": "chemin/vers/image_gameplay_subnautica.jpg"
-      }
+        "platform": "static/image/jeux en vrac/subnautica/platform.png",
+        "background": "static/image/jeux en vrac/subnautica/background.png",
+        "studio": "static/image/jeux en vrac/subnautica/studio.png",
+        "gameplay": "static/image/jeux en vrac/subnautica/gameplay.png"     
+       }
     },
     {
       "categorie": "Simulation",
@@ -198,10 +254,10 @@
       "auteur": "Monomi Park",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_slimerancher.jpg",
-        "background": "chemin/vers/image_background_slimerancher.jpg",
-        "studio": "chemin/vers/image_studio_slimerancher.jpg",
-        "gameplay": "chemin/vers/image_gameplay_slimerancher.jpg"
+        "platform": "static/image/jeux en vrac/pokemonnoir2/platform.png",
+        "background": "static/image/jeux en vrac/pokemonnoir2/background.png",
+        "studio": "static/image/jeux en vrac/pokemonnoir2/studio.png",
+        "gameplay": "static/image/jeux en vrac/pokemonnoir2/gameplay.png"
       }
     },
     {
@@ -210,10 +266,10 @@
       "auteur": "Game Freak",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_pokemonnoir2.jpg",
-        "background": "chemin/vers/image_background_pokemonnoir2.jpg",
-        "studio": "chemin/vers/image_studio_pokemonnoir2.jpg",
-        "gameplay": "chemin/vers/image_gameplay_pokemonnoir2.jpg"
+        "platform": "static/image/jeux en vrac/pokemonnoir2/platform.png",
+        "background": "static/image/jeux en vrac/pokemonnoir2/background.png",
+        "studio": "static/image/jeux en vrac/pokemonnoir2/studio.png",
+        "gameplay": "static/image/jeux en vrac/pokemonnoir2/gameplay.png"
       }
     },
     {
@@ -222,11 +278,11 @@
       "auteur": "Bungie",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_destiny1.jpg",
-        "background": "chemin/vers/image_background_destiny1.jpg",
-        "studio": "chemin/vers/image_studio_destiny1.jpg",
-        "gameplay": "chemin/vers/image_gameplay_destiny1.jpg"
-      }
+        "platform": "static/image/jeux en vrac/destiny1/platform.png",
+        "background": "static/image/jeux en vrac/destiny1/background.png",
+        "studio": "static/image/jeux en vrac/destiny1/studio.png",
+        "gameplay": "static/image/jeux en vrac/destiny1/gameplay.png"     
+       }
     },
     {
       "categorie": "Course",
@@ -234,10 +290,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_mariokart.jpg",
-        "background": "chemin/vers/image_background_mariokart.jpg",
-        "studio": "chemin/vers/image_studio_mariokart.jpg",
-        "gameplay": "chemin/vers/image_gameplay_mariokart.jpg"
+        "platform": "static/image/jeux en vrac/mariokart/platform.png",
+        "background": "static/image/jeux en vrac/mariokart/background.png",
+        "studio": "static/image/jeux en vrac/mariokart/studio.png",
+        "gameplay": "static/image/jeux en vrac/mariokart/gameplay.png"
       }
     },
     {
@@ -246,10 +302,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_ocarinaoftime.jpg",
-        "background": "chemin/vers/image_background_ocarinaoftime.jpg",
-        "studio": "chemin/vers/image_studio_ocarinaoftime.jpg",
-        "gameplay": "chemin/vers/image_gameplay_ocarinaoftime.jpg"
+        "platform": "static/image/jeux en vrac/ocarinaoftime/platform.png",
+        "background": "static/image/jeux en vrac/ocarinaoftime/background.png",
+        "studio": "static/image/jeux en vrac/ocarinaoftime/studio.png",
+        "gameplay": "static/image/jeux en vrac/ocarinaoftime/gameplay.png"
       }
     },
     {
@@ -258,10 +314,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_linktothepast.jpg",
-        "background": "chemin/vers/image_background_linktothepast.jpg",
-        "studio": "chemin/vers/image_studio_linktothepast.jpg",
-        "gameplay": "chemin/vers/image_gameplay_linktothepast.jpg"
+        "platform": "static/image/jeux en vrac/linktothepast/platform.png",
+        "background": "static/image/jeux en vrac/linktothepast/background.png",
+        "studio": "static/image/jeux en vrac/linktothepast/studio.png",
+        "gameplay": "static/image/jeux en vrac/linktothepast/gameplay.png"
       }
     },
     {
@@ -270,10 +326,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_mario64.jpg",
-        "background": "chemin/vers/image_background_mario64.jpg",
-        "studio": "chemin/vers/image_studio_mario64.jpg",
-        "gameplay": "chemin/vers/image_gameplay_mario64.jpg"
+        "platform": "static/image/jeux en vrac/mario64/platform.png",
+        "background": "static/image/jeux en vrac/mario64/background.png",
+        "studio": "static/image/jeux en vrac/mario64/studio.png",
+        "gameplay": "static/image/jeux en vrac/mario64/gameplay.png"
       }
     },
     {
@@ -282,10 +338,10 @@
       "auteur": "Sega",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_sonicunleashed.jpg",
-        "background": "chemin/vers/image_background_sonicunleashed.jpg",
-        "studio": "chemin/vers/image_studio_sonicunleashed.jpg",
-        "gameplay": "chemin/vers/image_gameplay_sonicunleashed.jpg"
+        "platform": "static/image/jeux en vrac/sonicunleashed/platform.png",
+        "background": "static/image/jeux en vrac/sonicunleashed/background.png",
+        "studio": "static/image/jeux en vrac/sonicunleashed/studio.png",
+        "gameplay": "static/image/jeux en vrac/sonicunleashed/gameplay.png"
       }
     },
     {
@@ -294,10 +350,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "chemin/vers/image_platform_smashbros.jpg",
-        "background": "chemin/vers/image_background_smashbros.jpg",
-        "studio": "chemin/vers/image_studio_smashbros.jpg",
-        "gameplay": "chemin/vers/image_gameplay_smashbros.jpg"
+        "platform": "static/image/compétitif/smashbros/platform.png",
+        "background": "static/image/compétitif/smashbros/background.png",
+        "studio": "static/image/compétitif/smashbros/studio.png",
+        "gameplay": "static/image/compétitif/smashbros/gameplay.png"
       }
     }
         
