@@ -297,9 +297,7 @@ section{
         font-size: 1.3em;
         margin: 10px;
         cursor: pointer;
-<<<<<<< HEAD
     }
-=======
 }
       
 .nav-close-btn:hover {
@@ -319,5 +317,4 @@ section{
 .footing {
     text-decoration: none;
     color: #fff;
->>>>>>> 8e09661184ca56adefc47cbaa09371f6d2ff02e4
 }
