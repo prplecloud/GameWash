@@ -290,10 +290,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/mariokart/platform.png",
-        "background": "static/image/jeux en vrac/mariokart/background.png",
-        "studio": "static/image/jeux en vrac/mariokart/studio.png",
-        "gameplay": "static/image/jeux en vrac/mariokart/gameplay.png"
+        "platform": "static/image/jeux en vrac/mario kart/mariomaps.png",
+        "background": "static/image/jeux en vrac/mario kart/mariokart.png",
+        "studio": "static/image/jeux en vrac/mario kart/Nintendo.png",
+        "gameplay": "static/image/jeux en vrac/mario kart/mariogameplay.png"
       }
     },
     {
@@ -302,10 +302,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/ocarinaoftime/platform.png",
-        "background": "static/image/jeux en vrac/ocarinaoftime/background.png",
-        "studio": "static/image/jeux en vrac/ocarinaoftime/studio.png",
-        "gameplay": "static/image/jeux en vrac/ocarinaoftime/gameplay.png"
+        "platform": "static/image/jeux en vrac/oot/zelda-maps.png",
+        "background": "static/image/jeux en vrac/oot/zelda.png",
+        "studio": "static/image/jeux en vrac/oot/Nintendo.png",
+        "gameplay": "static/image/jeux en vrac/oot/zelda-gameplay.png"
       }
     },
     {
@@ -314,10 +314,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/linktothepast/platform.png",
-        "background": "static/image/jeux en vrac/linktothepast/background.png",
-        "studio": "static/image/jeux en vrac/linktothepast/studio.png",
-        "gameplay": "static/image/jeux en vrac/linktothepast/gameplay.png"
+        "platform": "static/image/jeux en vrac/linkttp/linkttpmap.png",
+        "background": "static/image/jeux en vrac/linkttp/linkttp.png",
+        "studio": "static/image/jeux en vrac/linkttp/Nintendo.png",
+        "gameplay": "static/image/jeux en vrac/linkttp/linkttp_gameplay.png"
       }
     },
     {
@@ -338,10 +338,10 @@
       "auteur": "Sega",
       "contenu": "...",
       "images": {
-        "platform": "static/image/jeux en vrac/sonicunleashed/platform.png",
-        "background": "static/image/jeux en vrac/sonicunleashed/background.png",
-        "studio": "static/image/jeux en vrac/sonicunleashed/studio.png",
-        "gameplay": "static/image/jeux en vrac/sonicunleashed/gameplay.png"
+        "platform": "static/image/jeux en vrac/unleashed/sonic_map.png",
+        "background": "static/image/jeux en vrac/unleashed/sonic.png",
+        "studio": "static/image/jeux en vrac/unleashed/sega.png",
+        "gameplay": "static/image/jeux en vrac/unleashed/sonic_game_play.png"
       }
     },
     {
