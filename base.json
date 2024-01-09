@@ -19,7 +19,7 @@
       "contenu": "...",
       "images": {
         "platform": "static/image/compétitif/r6/r6.png",
-        "background": "static/image/image_background_r6.jpg",
+        "background": "chemin/vers/image_background_r6.jpg",
         "studio": "static/image/compétitif/r6/ubi.png",
         "gameplay": "static/image/compétitif/r6/r6_gameplay.png"
       }
@@ -54,10 +54,10 @@
       "auteur": "Embark",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_finals.jpg",
+        "platform": "static/image/compétitif/thefinals_map.png",
         "background": "static/image/compétitif/the finals/thefinals.png",
         "studio": "static/image/compétitif/the finals/embark.png",
-        "gameplay": "static/image/compétitif/the finals\thefinals_gameplay.png"
+        "gameplay": "static/image/compétitif/the finals/thefinals_gameplay.png"
       }
     },
     {
@@ -69,7 +69,7 @@
         "platform": "static/image/compétitif/escape from tarkov/tarkov_map.png",
         "background": "static/image/compétitif/escape from tarkov/tarkov.png",
         "studio": "static/image/compétitif/escape from tarkov/battlestate.png",
-        "gameplay": "static/image/compétitif/thefinals/thefinals.png"
+        "gameplay": "static/image/compétitif/escape from tarkov/tarkov_gameplay.png"
       }
     },
     {
@@ -79,7 +79,7 @@
       "contenu": "...",
       "images": {
         "platform": "static/image/compétitif/fifa/compo.png",
-        "background": "static/image/compétitif/fifa/fifa24.pngg",
+        "background": "static/image/compétitif/fifa/fifa24.png",
         "studio": "static/image/compétitif/fifa/EA.png",
         "gameplay": "static/image/compétitif/fifa/fifa24_gameplay.png"
       }
@@ -102,10 +102,10 @@
       "auteur": "FromSoftware",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_darksouls3.jpg",
-        "background": "static/image/image_background_darksouls3.jpg",
-        "studio": "static/image/image_studio_darksouls3.jpg",
-        "gameplay": "static/image/image_gameplay_darksouls3.jpg"
+        "platform": "static/image/jeux en vrac/Dark souls/ds3_gp.png",
+        "background": "static/image/jeux en vrac/Dark souls/ds3.png",
+        "studio": "static/image/jeux en vrac/Dark souls/from_software.png",
+        "gameplay": "static/image/jeux en vrac/Dark souls/ds3_gameplay.png"
       }
     },
     {
@@ -114,10 +114,10 @@
       "auteur": "FromSoftware",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_eldenring.jpg",
-        "background": "static/image/image_background_eldenring.jpg",
-        "studio": "static/image/image_studio_eldenring.jpg",
-        "gameplay": "static/image/image_gameplay_eldenring.jpg"
+        "platform": "static/image/jeux en vrac/elden ring/eldenmap.png",
+        "background": "static/image/jeux en vrac/elden ring/eldenring.png",
+        "studio": "static/image/jeux en vrac/elden ring/from_software.png",
+        "gameplay": "static/image/jeux en vrac/elden ring/malenia.png"
       }
     },
     {
@@ -126,10 +126,10 @@
       "auteur": "ConcernedApe",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_stardewvalley.jpg",
-        "background": "static/image/image_background_stardewvalley.jpg",
-        "studio": "static/image/image_studio_stardewvalley.jpg",
-        "gameplay": "static/image/image_gameplay_stardewvalley.jpg"
+        "platform": "static/image/jeux en vrac/stardewvalley/stardew_valley.png",
+        "background": "static/image/jeux en vrac/stardewvalley/stardewvalley.png",
+        "studio": "static/image/jeux en vrac/stardewvalley/chukle.png",
+        "gameplay": "static/image/jeux en vrac/stardewvalley/stardewvalley_gameplay;png"
       }
     },
     {
@@ -138,10 +138,10 @@
       "auteur": "Mojang Studios",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_minecraft.jpg",
-        "background": "static/image/image_background_minecraft.jpg",
-        "studio": "static/image/image_studio_minecraft.jpg",
-        "gameplay": "static/image/image_gameplay_minecraft.jpg"
+        "platform": "static/image/jeux en vrac/minecraft/mc_gameplay.png",
+        "background": "static/image/jeux en vrac/minecraft/minecraft.png",
+        "studio": "static/image/jeux en vrac/minecraft/mojang.png",
+        "gameplay": "static/image/jeux en vrac/minecraft/mc_gameplay2.png"      
       }
     },
     {
@@ -150,11 +150,11 @@
       "auteur": "Roblox Corporation",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_roblox.jpg",
-        "background": "static/image/image_background_roblox.jpg",
-        "studio": "static/image/image_studio_roblox.jpg",
-        "gameplay": "static/image/image_gameplay_roblox.jpg"
-      }
+        "platform": "static/image/jeux en vrac/roblox/serv_roblox.png",
+        "background": "static/image/jeux en vrac/roblox/rp_roblox.png",
+        "studio": "static/image/jeux en vrac/roblox/roblox.png",
+        "gameplay": "static/image/jeux en vrac/roblox/roblox_gameplay.png"     
+       }
     },
     {
       "categorie": "jeux en vrac",
@@ -162,10 +162,10 @@
       "auteur": "RobTop Games",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_geometrydash.jpg",
-        "background": "static/image/image_background_geometrydash.jpg",
-        "studio": "static/image/image_studio_geometrydash.jpg",
-        "gameplay": "static/image/image_gameplay_geometrydash.jpg"
+        "platform": "static/image/jeux en vrac/geometry dash/geometrydash_lobby.png",
+        "background": "static/image/jeux en vrac/geometry dash/geometrydash.png",
+        "studio": "static/image/jeux en vrac/geometry dash/robtop.png",
+        "gameplay": "static/image/jeux en vrac/geometry dash/geometrydash_gameplay.png"
       }
     },
     {
@@ -174,10 +174,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_majorasmask.jpg",
-        "background": "static/image/image_background_majorasmask.jpg",
-        "studio": "static/image/image_studio_majorasmask.jpg",
-        "gameplay": "static/image/image_gameplay_majorasmask.jpg"
+        "platform": "static/image/jeux en vrac/majoras mask/majoras_mask_map.png",
+        "background": "static/image/jeux en vrac/majoras mask/majoras_mask.png",
+        "studio": "static/image/jeux en vrac/majoras mask/Nintendo.png",
+        "gameplay": "static/image/jeux en vrac/majoras mask/majoras_mask_gameplay.png"
       }
     },
     {
@@ -186,11 +186,11 @@
       "auteur": "Unknown Worlds Entertainment",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_subnautica.jpg",
-        "background": "static/image/image_background_subnautica.jpg",
-        "studio": "static/image/image_studio_subnautica.jpg",
-        "gameplay": "static/image/image_gameplay_subnautica.jpg"
-      }
+        "platform": "static/image/jeux en vrac/subnautica/subnautica_map.png",
+        "background": "static/image/jeux en vrac/subnautica/subnautica.png",
+        "studio": "static/image/jeux en vrac/subnautica/unknown.png",
+        "gameplay": "static/image/jeux en vrac/subnautica/Subnautica_gameplay.png"     
+       }
     },
     {
       "categorie": "jeux en vrac",
@@ -198,10 +198,10 @@
       "auteur": "Monomi Park",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_slimerancher.jpg",
-        "background": "static/image/image_background_slimerancher.jpg",
-        "studio": "static/image/image_studio_slimerancher.jpg",
-        "gameplay": "static/image/image_gameplay_slimerancher.jpg"
+        "platform": "static/image/jeux en vrac/slime rancher/sr_map.png",
+        "background": "static/image/jeux en vrac/slime rancher/sr.png",
+        "studio": "static/image/jeux en vrac/slime rancher/monomi.png",
+        "gameplay": "static/image/jeux en vrac/slime rancher/sr_gameplay.png"
       }
     },
     {
@@ -210,10 +210,10 @@
       "auteur": "Game Freak",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_pokemonnoir2.jpg",
-        "background": "static/image/image_background_pokemonnoir2.jpg",
-        "studio": "static/image/image_studio_pokemonnoir2.jpg",
-        "gameplay": "static/image/image_gameplay_pokemonnoir2.jpg"
+        "platform": "static/image/jeux en vrac/pokemon noir 2/pokemon_map.png",
+        "background": "static/image/jeux en vrac/pokemon noir 2/pokemon.png",
+        "studio": "static/image/jeux en vrac/pokemon noir 2/Nintendo.png",
+        "gameplay": "static/image/jeux en vrac/pokemon noir 2/pokemon_N.png"
       }
     },
     {
@@ -222,11 +222,11 @@
       "auteur": "Bungie",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_destiny1.jpg",
-        "background": "static/image/image_background_destiny1.jpg",
-        "studio": "static/image/image_studio_destiny1.jpg",
-        "gameplay": "static/image/image_gameplay_destiny1.jpg"
-      }
+        "platform": "static/image/jeux en vrac/destiny1/destiny_map.png",
+        "background": "static/image/jeux en vrac/destiny1/Destiny.png",
+        "studio": "static/image/jeux en vrac/destiny1/bungie.png",
+        "gameplay": "static/image/jeux en vrac/destiny1/oryx.png"     
+       }
     },
     {
       "categorie": "Course",
@@ -234,10 +234,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_mariokart.jpg",
-        "background": "static/image/image_background_mariokart.jpg",
-        "studio": "static/image/image_studio_mariokart.jpg",
-        "gameplay": "static/image/image_gameplay_mariokart.jpg"
+        "platform": "static/image/jeux en vrac/mariokart/platform.png",
+        "background": "static/image/jeux en vrac/mariokart/background.png",
+        "studio": "static/image/jeux en vrac/mariokart/studio.png",
+        "gameplay": "static/image/jeux en vrac/mariokart/gameplay.png"
       }
     },
     {
@@ -246,10 +246,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_ocarinaoftime.jpg",
-        "background": "static/image/image_background_ocarinaoftime.jpg",
-        "studio": "static/image/image_studio_ocarinaoftime.jpg",
-        "gameplay": "static/image/image_gameplay_ocarinaoftime.jpg"
+        "platform": "static/image/jeux en vrac/ocarinaoftime/platform.png",
+        "background": "static/image/jeux en vrac/ocarinaoftime/background.png",
+        "studio": "static/image/jeux en vrac/ocarinaoftime/studio.png",
+        "gameplay": "static/image/jeux en vrac/ocarinaoftime/gameplay.png"
       }
     },
     {
@@ -258,10 +258,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_linktothepast.jpg",
-        "background": "static/image/image_background_linktothepast.jpg",
-        "studio": "static/image/image_studio_linktothepast.jpg",
-        "gameplay": "static/image/image_gameplay_linktothepast.jpg"
+        "platform": "static/image/jeux en vrac/linktothepast/platform.png",
+        "background": "static/image/jeux en vrac/linktothepast/background.png",
+        "studio": "static/image/jeux en vrac/linktothepast/studio.png",
+        "gameplay": "static/image/jeux en vrac/linktothepast/gameplay.png"
       }
     },
     {
@@ -270,10 +270,10 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_mario64.jpg",
-        "background": "static/image/image_background_mario64.jpg",
-        "studio": "static/image/image_studio_mario64.jpg",
-        "gameplay": "static/image/image_gameplay_mario64.jpg"
+        "platform": "static/image/coups de coeur/mario 64/mario64_pingouin.png",
+        "background": "static/image/coups de coeur/mario 64/mario64.png",
+        "studio": "static/image/coups de coeur/mario 64/Nintendo.png",
+        "gameplay": "static/image/coups de coeur/mario 64/mario64_gameplay.png"
       }
     },
     {
@@ -282,10 +282,10 @@
       "auteur": "Sega",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_sonicunleashed.jpg",
-        "background": "static/image/image_background_sonicunleashed.jpg",
-        "studio": "static/image/image_studio_sonicunleashed.jpg",
-        "gameplay": "static/image/image_gameplay_sonicunleashed.jpg"
+        "platform": "static/image/jeux en vrac/sonicunleashed/platform.png",
+        "background": "static/image/jeux en vrac/sonicunleashed/background.png",
+        "studio": "static/image/jeux en vrac/sonicunleashed/studio.png",
+        "gameplay": "static/image/jeux en vrac/sonicunleashed/gameplay.png"
       }
     },
     {
@@ -294,12 +294,72 @@
       "auteur": "Nintendo",
       "contenu": "...",
       "images": {
-        "platform": "static/image/image_platform_smashbros.jpg",
-        "background": "static/image/image_background_smashbros.jpg",
-        "studio": "static/image/image_studio_smashbros.jpg",
-        "gameplay": "static/image/image_gameplay_smashbros.jpg"
+        "platform": "static/image/compétitif/smash bros/smaash_map.png",
+        "background": "static/image/compétitif/smash bros/smashbros.png",
+        "studio": "static/image/compétitif/smash bros/Nintendo.png",
+        "gameplay": "static/image/compétitif/smash bros/smash_gameplay.png"
       }
-    }
+    },
+    {
+      "categorie": "FPS",
+      "titre": "Black Ops 2",
+      "auteur": "Activision",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/compétitif/bo2/bo2_map.png",
+        "background": "static/image/compétitif/bo2/bo2.png",
+        "studio": "static/image/compétitif/bo2/treyarch.png",
+        "gameplay": "static/image/compétitif/bo2/bo2_gameplay.png"
+      }
+    },
+    {
+      "categorie": "Sport",
+      "titre": "Rocket League",
+      "auteur": "Psyonix",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/jeux en vrac/rocketleague/maprl.png",
+        "background": "static/image/jeux en vrac/rocketleague/rocketleague.png",
+        "studio": "static/image/jeux en vrac/rocketleague/psyonix.png",
+        "gameplay": "static/image/jeux en vrac/rocketleague/rocketleague_gameplay;png.webp"
+      }
+    },
+    {
+      "categorie": "Action-Adventure",
+      "titre": "GTA V",
+      "auteur": "Rockstar Games",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/jeux en vrac/GTA 5/gta_map.png",
+        "background": "static/image/jeux en vrac/GTA 5/gta.png",
+        "studio": "static/image/jeux en vrac/GTA 5/rockstargames.png",
+        "gameplay": "static/image/jeux en vrac/GTA 5/gta_gameplay.png"
+      }
+    },
+    {
+      "categorie": "Exploration",
+      "titre": "No Man's Sky",
+      "auteur": "Hello Games",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/jeux en vrac/nomanssky/nomanssky_starship.png",
+        "background": "static/image/jeux en vrac/nomanssky/nomanssky.png",
+        "studio": "static/image/jeux en vrac/nomanssky/hellogames.png",
+        "gameplay": "static/image/jeux en vrac/nomanssky/nomanssky_gameplay.png"
+      }
+    },
+    {
+      "categorie": "Action-Adventure",
+      "titre": "Bully",
+      "auteur": "Rockstar Games",
+      "contenu": "...",
+      "images": {
+        "platform": "static/image/jeux en vrac/bully/Bully_Map.png",
+        "background": "static/image/jeux en vrac/bully/bully.png",
+        "studio": "static/image/jeux en vrac/bully/rockstargames.png",
+        "gameplay": "static/image/jeux en vrac/bully/bully_gameplay.png"
+      }
+    }    
         
   ]
 }
