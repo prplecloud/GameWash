@@ -94,10 +94,18 @@ header .nav-bar {
 
 .navigation .nav-items a{
     color: #fff;
-    font-size: 1.2em;
+    font-size: 1.6em;
     text-decoration: none;
     display: inline;
-    /*border: solid white 2px;*/
+    /*border: solid white 2px;*/ 
+}
+
+.navigation .nav-items a:hover {
+    text-shadow:  0 0 10px #fff, 
+               0 0 10px #fff, 
+               0 0 42px rgb(255, 255, 255),   
+               0 0 77px rgb(255, 254, 255), 
+               0 0 100px rgb(255, 255, 255)
 }
 
 .navigation .nav-items a:not(:last-child){
@@ -250,7 +258,7 @@ section{
 
     .navigation .nav-items{
         position: relative;
-        background: #fff;
+        background: #d2abca;
         width: 400px;
         max-width: 400px;
         display: grid;
@@ -268,7 +276,7 @@ section{
     }
 
     .navigation .nav-items a{
-        color: #222;
+        color: white;
         font-size: 1em;
         margin: 15px 50px;
     }
@@ -277,16 +285,39 @@ section{
         display: inline-block;
         font-size: 1.2em;
         margin-right: 5px;
+        
     }
 
     .nav-close-btn{
         display: block;
-        color: #222;
+        color: white;
         position: absolute;
         top: 0;
         right: 0;
         font-size: 1.3em;
         margin: 10px;
         cursor: pointer;
+<<<<<<< HEAD
     }
+=======
+}
+      
+.nav-close-btn:hover {
+    text-shadow:  0 0 10px #fff, 
+               0 0 10px #fff, 
+               0 0 42px rgb(255, 255, 255),   
+               0 0 77px rgb(255, 254, 255), 
+               0 0 100px rgb(255, 255, 255)
+}
+
+.foot {
+    height: 5vh;
+    background-color: #d2abca;
+    border: #FFCF4F solid 3px;
+}
+
+.footing {
+    text-decoration: none;
+    color: #fff;
+>>>>>>> 8e09661184ca56adefc47cbaa09371f6d2ff02e4
 }
