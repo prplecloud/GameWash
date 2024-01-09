@@ -5,19 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/login.css">
 </head>
+    <a class="retour" href="http://localhost:8080/home"><i class="fa-solid fa-arrow-left"></i>&#8592; Retour</a>
 <body>
-
-    <form method="POST" action="/admin">
-        <i class="fa fa-user fa-5x"></i>
-        <input id="UserName" name="UserName" placeholder="Entrer votre pseudo" autofocus required>
-        <p class="form-field-err"></p>
-        <input id="Password" name="Password" type="password" placeholder="Entrer votre mot de passe" required>
-        <p class="form-field-err"></p>
-        <button type="submit">Envoyer</button>
+    <div>
+        <form class="form" method="POST" action="/admin">
+          <i class="fa fa-user fa-5x"></i>
+         <input id="UserName" name="UserName" placeholder="Entrer votre pseudo" autofocus required>
+         <p class="form-field-err"></p>
+         <input id="Password" name="Password" type="password" placeholder="Entrer votre mot de passe" required>
+         <p class="form-field-err"></p>
+         <button type="submit">Envoyer</button>
     </form>
-
+    </div>
 </body>
 </html>
 {{end}}
