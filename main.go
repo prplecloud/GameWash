@@ -8,28 +8,40 @@ import (
 	"os"
 )
 
-type Login struct {
-	Username string
-	Passwd   string
+type Image struct {
+	Platform   string `json:"platform"`
+	Background string `json:"background"`
+	Studio     string `json:"studio"`
+	Gameplay   string `json:"gameplay"`
+}
+
+/* type Article struct {
+	Categorie string  `json:"categorie"`
+	Titre     string  `json:"titre"`
+	Auteur    string  `json:"auteur"`
+	Contenu   string  `json:"contenu"`
+	Images    []Image `json:"images"`
+	URL       string  `json:"url"`
 }
 
 type Glaoui struct {
-	Articles []struct {
-		Categorie string `json:"categorie"`
-		Titre     string `json:"titre"`
-		Auteur    string `json:"auteur"`
-		Contenu   string `json:"contenu"`
-		Images    []struct {
-			Platform   string `json:"platform"`
-			Background string `json:"background"`
-			Studio     string `json:"studio"`
-			Gameplay   string `json:"gameplay"`
-		} `json:"images"`
-		URL string `json:"url"`
-	} `json:"articles"`
+	Articles []Article `json:"articles"`
+}*/
+
+type Article struct {
+	Categorie string `json:"categorie"`
+	Titre     string `json:"titre"`
+	Auteur    string `json:"auteur"`
+	Contenu   string `json:"contenu"`
+	Images    struct {
+		Platform   string `json:"platform"`
+		Background string `json:"background"`
+		Studio     string `json:"studio"`
+		Gameplay   string `json:"gameplay"`
+	} `json:"images"`
 }
 
-var logs Login
+//var logs Login
 
 func main() {
 	temp, err := template.ParseGlob("./templates/*.html")
@@ -63,11 +75,11 @@ func main() {
 		temp.ExecuteTemplate(w, "login", nil)
 	})
 
-	http.HandleFunc("/login/treatment", func(w http.ResponseWriter, r *http.Request) {
-		logs = Login{r.FormValue("Username"), r.FormValue("Passwd")}
+	//http.HandleFunc("/login/treatment", func(w http.ResponseWriter, r *http.Request) {
+	//logs = Login{r.FormValue("Username"), r.FormValue("Passwd")}
 
-		temp.ExecuteTemplate(w, "login", nil)
-	})
+	//temp.ExecuteTemplate(w, "login", nil)
+	//})
 
 	http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
 
@@ -108,7 +120,7 @@ func Json() {
 		return
 	}
 
-	var glaouiData Glaoui
+	var glaouiData []Article
 
 	err = json.Unmarshal(jsonData, &glaouiData)
 	if err != nil {

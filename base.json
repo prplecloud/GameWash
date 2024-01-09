@@ -1,5 +1,4 @@
-{
-  "articles": [
+[
     {
       "categorie": "Compétitif",
       "titre": "Teamfight Tactics",
@@ -347,18 +346,7 @@
         "studio": "static/image/coups de coeur/nomanssky/hellogames.png",
         "gameplay": "static/image/coups de coeur/nomanssky/nomanssky_gameplay.png"
       }
-    },
-    {
-      "categorie": "Coups de coeur",
-      "titre": "Bully",
-      "auteur": "Rockstar Games",
-      "contenu": "...",
-      "images": {
-        "platform": "static/image/coups de coeur/bully/Bully_Map.png",
-        "background": "static/image/coups de coeur/bully/bully.png",
-        "studio": "static/image/coups de coeur/bully/rockstargames.png",
-        "gameplay": "static/image/coups de coeur/bully/bully_gameplay.png"
-      }
-    }  
+    }
+        
   ]
 }
