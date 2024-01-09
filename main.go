@@ -1,6 +1,7 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
 	"html/template"
 	"net/http"
@@ -92,6 +93,28 @@ func main() {
 	fileserver := http.FileServer(http.Dir(rootDoc + "/asset"))
 	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
 	fmt.Println("Serveur démarré sur le port 8080...")
+	Json()
 	http.ListenAndServe("localhost:8080", nil)
 
+}
+
+func Json() {
+
+	jsonFilePath := "base.json"
+
+	jsonData, err := os.ReadFile(jsonFilePath)
+	if err != nil {
+		fmt.Println("Erreur lors de la lecture du fichier JSON :", err)
+		return
+	}
+
+	var glaouiData Glaoui
+
+	err = json.Unmarshal(jsonData, &glaouiData)
+	if err != nil {
+		fmt.Println("Erreur lors du marshal de la struct en JSON :", err)
+		return
+	}
+
+	fmt.Println(glaouiData)
 }
