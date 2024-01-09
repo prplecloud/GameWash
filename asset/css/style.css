@@ -349,9 +349,8 @@ footer {
 	width: 240px;
 	padding: 0 6px;
 }
-.search-box:hover > .loupe {
-	display: none;
-}
+
+
 
 .search-txt {			
 	border: none;
@@ -369,3 +368,7 @@ footer {
     height: 2vh;
 } 
 
+.loupebtn {
+    background-color: #B895B0;
+    border: none;
+}
