@@ -13,17 +13,9 @@
 
 /*======= Scroll indicator bar =======*/
 
-/*======= Media queries (max-width: 1100px) =======*/
-@media screen and (max-width: 1100px){
-    
-}
 
-/*======= Media queries (max-width: 850px) =======*/
-@media screen and (max-width: 850px) {
 
-    /*======= Navigation menu =======*/
-
-}/*======= Main Css =======*/
+/*======= Main Css =======*/
 *{
     margin: 0;
     padding: 0;
@@ -205,7 +197,7 @@ section{
 }
 
 /*======= Media queries (max-width: 1100px) =======*/
-@media screen and (max-width: 1100px){
+@media screen and (max-width: 1127px){
     header .nav-bar{
         padding: 0 50px;
     }
@@ -217,7 +209,7 @@ section{
 }
 
 /*======= Media queries (max-width: 850px) =======*/
-@media screen and (max-width: 850px) {
+@media screen and (max-width: 1127px) {
     header .nav-bar {
         padding: 0 20px;
     }
@@ -226,7 +218,7 @@ section{
         padding: 30px 20px;
         font-size: 0.8em;
     }
-}
+
 
     /*======= Navigation menu =======*/
     .nav-menu-btn{
@@ -309,6 +301,8 @@ section{
                0 0 100px rgb(255, 255, 255)
 }
 
+}
+
 footer {
     height: 15vh;
     background-color: #d2abca;
@@ -339,3 +333,4 @@ footer {
                0 0 77px rgb(255, 254, 255), 
                0 0 100px rgb(255, 255, 255)
 }
+
