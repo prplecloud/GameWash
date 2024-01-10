@@ -8,12 +8,12 @@ import (
 	"os"
 )
 
-type Image struct {
+/*type Image struct {
 	Platform   string `json:"platform"`
 	Background string `json:"background"`
 	Studio     string `json:"studio"`
 	Gameplay   string `json:"gameplay"`
-}
+}*/
 
 /* type Article struct {
 	Categorie string  `json:"categorie"`
@@ -41,9 +41,18 @@ type Article struct {
 	} `json:"images"`
 }
 
-//var logs Login
+type Form struct {
+	Categorie    string `json:"categorie"`
+	Auteur       string `json:"auteur"`
+	Date         string `json:"date"`
+	Introduction string `json:"introduction"`
+	Texte        string `json:"texte"`
+}
+
+//var logs Login <-- login var for login.html
 
 func main() {
+
 	temp, err := template.ParseGlob("./templates/*.html")
 	if err != nil {
 		fmt.Printf(fmt.Sprintf("ERREUR => %s", err.Error()))
@@ -130,3 +139,40 @@ func Json() {
 
 	fmt.Println(glaouiData)
 }
+
+/*func handleFormSubmission(w http.ResponseWriter, r *http.Request) {
+
+	// Decode form values
+	var form Form
+
+	err := json.NewDecoder(r.Body).Decode(&form)
+	if err != nil {
+		fmt.Println("Erreur lors du décodage du fichier JSON :", err)
+		return
+	}
+
+	// Read existing json data
+	var articles []Article
+
+	// Unmarshal json
+
+	err = json.Unmarshal(jsonData, &articles)
+	if err != nil {
+		fmt.Println("Erreur lors du marshal de la struct en JSON :", err)
+		return
+	}
+
+	// Append new article
+	articles = append(articles, Article{
+		Categorie: form.Categorie,
+		// map other fields
+	})
+
+	// Marshall back to json
+	data, err := json.Marshal(articles)
+
+	// Write updated json to file
+
+	http.Redirect(w, r, "/", http.StatusSeeOther)
+
+}*/
