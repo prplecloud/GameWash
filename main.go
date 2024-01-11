@@ -58,12 +58,16 @@ func main() {
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "home", nil)
 	})
+
 	http.HandleFunc("/compet", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "compet", nil)
+		LoadArticles()
+		temp.ExecuteTemplate(w, "home", nil)
 	})
+
 	http.HandleFunc("/vrac", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "vrac", nil)
 	})
+
 	http.HandleFunc("/coeur", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "coeur", nil)
 	})
@@ -81,9 +85,11 @@ func main() {
 
 		temp.ExecuteTemplate(w, "contact", nil)
 	})
+
 	http.HandleFunc("/error", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "error", nil)
 	})
+
 	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "about", nil)
 	})
@@ -184,4 +190,44 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Println("Ajouté avec succès")
 	http.Redirect(w, r, "http://localhost:8080/home", http.StatusSeeOther)
+}
+
+func ShowArticles(w http.ResponseWriter, r *http.Request) {
+	// Charger les données des articles depuis le fichier JSON
+	articles, err := LoadArticles()
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors du chargement des articles : %v", err), http.StatusInternalServerError)
+		return
+	}
+
+	// Charger le modèle HTML
+	tmpl, err := template.ParseFiles("template.html")
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors du chargement du modèle : %v", err), http.StatusInternalServerError)
+		return
+	}
+
+	// Exécuter le modèle avec les données des articles
+	err = tmpl.Execute(w, articles)
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors de l'exécution du modèle : %v", err), http.StatusInternalServerError)
+		return
+	}
+}
+
+func LoadArticles() ([]Form, error) {
+	// Charger les articles depuis le fichier JSON
+	jsonFilePath := "data.json"
+	jsonData, err := os.ReadFile(jsonFilePath)
+	if err != nil {
+		return nil, err
+	}
+
+	var articles []Form
+	err = json.Unmarshal(jsonData, &articles)
+	if err != nil {
+		return nil, err
+	}
+
+	return articles, nil
 }
