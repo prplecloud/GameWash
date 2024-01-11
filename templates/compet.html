@@ -39,10 +39,11 @@
     <ul>
         {{range .}}
             <li>
-                <p><strong>Catégorie:</strong> {{.Categorie}}, </p>
-              <p>  <strong>Auteur:</strong> {{.Auteur}}, </p>
+                <p><strong>Catégorie:</strong> {{.Categorie}} </p>
+              <p>  <strong>Auteur:</strong> {{.Auteur}} </p>
                 <p>{{.Introduction}}</p>
                 <p>{{.Texte}}</p>
+                <p>Images : {{.Images}}</p>
             </li>
         {{end}}
     </ul>

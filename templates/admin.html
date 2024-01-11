@@ -9,7 +9,7 @@
 </head>
 <body>
     <a class="retour" href="http://localhost:8080/home"><i class="fa-solid fa-arrow-left"></i>&#8592; Retour</a>
-    <form class="form" method="get" action="/form/treatment">
+    <form class="form" method="get" action="/form/treatment" enctype="multipart/form-data">
         <i class=""></i>
         <label for="categorie">Catégorie</label>
             <select class="select" name="categorie" id="categorie" multiple>
@@ -33,6 +33,10 @@
 
             <textarea id="text" name="texte" rows="7" cols="100">
         </textarea>
+
+        <label for="file">Sélectionnez un fichier</label>
+        <input type="file" id="file" name="file" accept=".png, .jpg, .jpeg" multiple>
+
         <button type="submit">Publier</button>
     </form>
 </body>

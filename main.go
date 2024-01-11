@@ -45,6 +45,12 @@ type Form struct {
 	Date         string `json:"date"`
 	Introduction string `json:"introduction"`
 	Texte        string `json:"texte"`
+	Images       struct {
+		Platform   string `json:"platform"`
+		Background string `json:"background"`
+		Studio     string `json:"studio"`
+		Gameplay   string `json:"gameplay"`
+	} `json:"images"`
 }
 
 //var logs Login
