@@ -121,6 +121,7 @@ header .nav-bar {
 
 header {
     height: 20vh;
+    background-color: #B895B0;
 }
 
 .navigation .nav-items a i{
@@ -393,7 +394,12 @@ footer {
 
 .txtabout {
     color: #fff;
-    font-size: 2vh;
+    font-size: 2.5vh;
+}
+
+.trello {
+    width: 70%;
+    padding: 1rem;
 }
 
 .restedroit {
