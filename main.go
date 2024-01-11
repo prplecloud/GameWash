@@ -60,8 +60,12 @@ func main() {
 	})
 
 	http.HandleFunc("/compet", func(w http.ResponseWriter, r *http.Request) {
-		LoadArticles()
-		temp.ExecuteTemplate(w, "home", nil)
+		article, err := LoadArticles()
+		if err != nil {
+			fmt.Println("erreur")
+			return
+		}
+		temp.ExecuteTemplate(w, "compet", article)
 	})
 
 	http.HandleFunc("/vrac", func(w http.ResponseWriter, r *http.Request) {
