@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"net/http"
 	"os"
+	"time"
 )
 
 type Image struct {
@@ -86,9 +87,13 @@ func main() {
 	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "about", nil)
 	})
+
 	http.HandleFunc("/admin", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "admin", nil)
 	})
+
+	http.HandleFunc("/form/treatment", FormSubmission)
+
 	rootDoc, _ := os.Getwd()
 	fileserver := http.FileServer(http.Dir(rootDoc + "/asset"))
 	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
@@ -117,55 +122,66 @@ func Json() {
 }
 
 func FormSubmission(w http.ResponseWriter, r *http.Request) {
+	// Chemin du fichier JSON
+	nomFichier := "./data.json"
 
-	var form Form
-
-	err := json.NewDecoder(r.Body).Decode(&form)
+	// Récupérer les données du formulaire de la requête HTTP
+	err := r.ParseForm()
 	if err != nil {
-		fmt.Println("Erreur de décodage", err)
+		http.Error(w, "Erreur lors de l'analyse du formulaire", http.StatusInternalServerError)
 		return
 	}
 
-	// Lecture JSON
-	jsonFile, err := os.Open("data.json")
-	if err != nil {
-		fmt.Println("Erreur de lecture", err)
-		return
-	}
-	defer jsonFile.Close()
+	fmt.Println(r.Form.Get("categorie"))
+	fmt.Println(r.Form.Get("auteur"))
 
-	var articles []Form
-
-	// Unmarshal JSON
-	err = json.NewDecoder(jsonFile).Decode(&articles)
-	if err != nil {
-		fmt.Println("Erreur d'unMarshal", err)
-		return
+	// Créer une nouvelle instance de Form à partir des données du formulaire
+	form := Form{
+		Categorie:    r.Form.Get("categorie"),
+		Auteur:       r.Form.Get("auteur"),
+		Introduction: r.Form.Get("introduction"),
+		Texte:        r.Form.Get("texte"),
 	}
 
-	// Append article
-	articles = append(articles, Form{
-		Categorie:    form.Categorie,
-		Auteur:       form.Auteur,
-		Date:         form.Date,
-		Introduction: form.Introduction,
-		Texte:        form.Texte,
-	})
-
-	// Marshal nouvelles data
-	Data, err := json.MarshalIndent(articles, "", "  ")
-	if err != nil {
-		fmt.Println("Erreur de Marshal", err)
-		return
+	fmt.Println(form)
+	// Ajouter la date actuelle si elle n'est pas fournie dans le formulaire
+	if form.Date == "" {
+		form.Date = time.Now().Format("2006-01-02")
 	}
 
-	// Ecriture dans le JSON
-	err = os.WriteFile("data.json", Data, 0644)
+	// Ouvrir le fichier en mode lecture/écriture ou le créer s'il n'existe pas
+	fichier, err := os.OpenFile(nomFichier, os.O_RDWR|os.O_CREATE, 0644)
 	if err != nil {
-		fmt.Println("Erreur d'écriture", err)
+		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", err), http.StatusInternalServerError)
+		return
+	}
+	defer fichier.Close()
+
+	// Charger le contenu actuel du fichier
+	var forms []Form
+	if err := json.NewDecoder(fichier).Decode(&forms); err != nil && err.Error() != "EOF" {
+		http.Error(w, fmt.Sprintf("Erreur lors de la lecture du fichier JSON : %v", err), http.StatusInternalServerError)
 		return
 	}
 
-	http.Redirect(w, r, "http://localhost:8080/form/treatment", http.StatusSeeOther)
+	// Ajouter la nouvelle forme à la liste
+	forms = append(forms, form)
 
+	// Réécrire le fichier avec la nouvelle liste sans tronquer
+	fichier.Seek(0, 0)
+	if err := fichier.Truncate(0); err != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors de la troncature du fichier : %v", err), http.StatusInternalServerError)
+		return
+	}
+	if _, err := fichier.Seek(0, 0); err != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors du positionnement du curseur au début du fichier : %v", err), http.StatusInternalServerError)
+		return
+	}
+	if err := json.NewEncoder(fichier).Encode(forms); err != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors de l'écriture du fichier JSON : %v", err), http.StatusInternalServerError)
+		return
+	}
+
+	fmt.Println("Ajouté avec succès")
+	http.Redirect(w, r, "http://localhost:8080/home", http.StatusSeeOther)
 }
