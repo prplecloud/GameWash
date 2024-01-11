@@ -16,16 +16,16 @@ type Image struct {
 	Gameplay   string `json:"gameplay"`
 }
 
-/* type Article struct {
-	Categorie string  `json:"categorie"`
-	Titre     string  `json:"titre"`
-	Auteur    string  `json:"auteur"`
-	Contenu   string  `json:"contenu"`
-	Images    []Image `json:"images"`
-	URL       string  `json:"url"`
-}
+/*
+	 type Article struct {
+		Categorie string  `json:"categorie"`
+		Titre     string  `json:"titre"`
+		Auteur    string  `json:"auteur"`
+		Contenu   string  `json:"contenu"`
+		Images    []Image `json:"images"`
+		URL       string  `json:"url"`
+	}
 */
-
 type Article struct {
 	Categorie string `json:"categorie"`
 	Titre     string `json:"titre"`
@@ -38,7 +38,6 @@ type Article struct {
 		Gameplay   string `json:"gameplay"`
 	} `json:"images"`
 }
-
 type Form struct {
 	Categorie    string `json:"categorie"`
 	Auteur       string `json:"auteur"`
@@ -56,11 +55,13 @@ type Form struct {
 //var logs Login
 
 func main() {
+
 	temp, err := template.ParseGlob("./templates/*.html")
 	if err != nil {
 		fmt.Printf(fmt.Sprintf("ERREUR => %s", err.Error()))
 		return
 	}
+
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "home", nil)
 	})
@@ -81,18 +82,17 @@ func main() {
 	http.HandleFunc("/coeur", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "coeur", nil)
 	})
+
 	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "login", nil)
 	})
 
 	//http.HandleFunc("/login/treatment", func(w http.ResponseWriter, r *http.Request) {
 	//logs = Login{r.FormValue("Username"), r.FormValue("Passwd")}
-
 	//temp.ExecuteTemplate(w, "login", nil)
 	//})
 
 	http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
-
 		temp.ExecuteTemplate(w, "contact", nil)
 	})
 
@@ -109,7 +109,6 @@ func main() {
 	})
 
 	http.HandleFunc("/form/treatment", FormSubmission)
-
 	rootDoc, _ := os.Getwd()
 	fileserver := http.FileServer(http.Dir(rootDoc + "/asset"))
 	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
@@ -117,10 +116,9 @@ func main() {
 	Json()
 	http.ListenAndServe("localhost:8080", nil)
 }
+
 func Json() {
-
 	jsonFilePath := "./base.json"
-
 	jsonData, err := os.ReadFile(jsonFilePath)
 	if err != nil {
 		fmt.Println("Erreur lors de la lecture du fichier JSON :", err)
@@ -138,8 +136,9 @@ func Json() {
 }
 
 func FormSubmission(w http.ResponseWriter, r *http.Request) {
+
 	// Chemin du fichier JSON
-	nomFichier := "./data.json"
+	nomFichier := "data.json"
 
 	// Récupérer les données du formulaire de la requête HTTP
 	err := r.ParseForm()
@@ -149,6 +148,7 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 	}
 
 	fmt.Println(r.Form.Get("categorie"))
+
 	fmt.Println(r.Form.Get("auteur"))
 
 	// Créer une nouvelle instance de Form à partir des données du formulaire
@@ -171,10 +171,12 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", err), http.StatusInternalServerError)
 		return
 	}
+
 	defer fichier.Close()
 
 	// Charger le contenu actuel du fichier
 	var forms []Form
+
 	if err := json.NewDecoder(fichier).Decode(&forms); err != nil && err.Error() != "EOF" {
 		http.Error(w, fmt.Sprintf("Erreur lors de la lecture du fichier JSON : %v", err), http.StatusInternalServerError)
 		return
@@ -189,10 +191,12 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, fmt.Sprintf("Erreur lors de la troncature du fichier : %v", err), http.StatusInternalServerError)
 		return
 	}
+
 	if _, err := fichier.Seek(0, 0); err != nil {
 		http.Error(w, fmt.Sprintf("Erreur lors du positionnement du curseur au début du fichier : %v", err), http.StatusInternalServerError)
 		return
 	}
+
 	if err := json.NewEncoder(fichier).Encode(forms); err != nil {
 		http.Error(w, fmt.Sprintf("Erreur lors de l'écriture du fichier JSON : %v", err), http.StatusInternalServerError)
 		return
@@ -234,6 +238,7 @@ func LoadArticles() ([]Form, error) {
 	}
 
 	var articles []Form
+
 	err = json.Unmarshal(jsonData, &articles)
 	if err != nil {
 		return nil, err
