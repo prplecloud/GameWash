@@ -8,14 +8,15 @@ import (
 	"os"
 )
 
-/*type Image struct {
+/*
+type Image struct {
 	Platform   string `json:"platform"`
 	Background string `json:"background"`
 	Studio     string `json:"studio"`
 	Gameplay   string `json:"gameplay"`
-}*/
+}
 
-/* type Article struct {
+type Article struct {
 	Categorie string  `json:"categorie"`
 	Titre     string  `json:"titre"`
 	Auteur    string  `json:"auteur"`
@@ -23,6 +24,7 @@ import (
 	Images    []Image `json:"images"`
 	URL       string  `json:"url"`
 }
+
 
 type Glaoui struct {
 	Articles []Article `json:"articles"`
@@ -79,6 +81,13 @@ func main() {
 		temp.ExecuteTemplate(w, "coeur", nil)
 	})
 
+	http.HandleFunc("/form/treatment", func(w http.ResponseWriter, r *http.Request) {
+		//value := r.FormValue("value")
+		http.Redirect(w, r, "/admin", http.StatusMovedPermanently)
+		//if article = posted, write "article posté" on the page
+
+	})
+
 	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
 
 		temp.ExecuteTemplate(w, "login", nil)
@@ -129,7 +138,7 @@ func Json() {
 		return
 	}
 
-	var glaouiData []Article
+	var glaouiData Article
 
 	err = json.Unmarshal(jsonData, &glaouiData)
 	if err != nil {
@@ -140,39 +149,57 @@ func Json() {
 	fmt.Println(glaouiData)
 }
 
-/*func handleFormSubmission(w http.ResponseWriter, r *http.Request) {
+func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
-	// Decode form values
 	var form Form
 
 	err := json.NewDecoder(r.Body).Decode(&form)
 	if err != nil {
-		fmt.Println("Erreur lors du décodage du fichier JSON :", err)
+		fmt.Println("Erreur de décodage", err)
 		return
 	}
 
-	// Read existing json data
-	var articles []Article
-
-	// Unmarshal json
-
-	err = json.Unmarshal(jsonData, &articles)
+	// Read JSON file
+	jsonFile, err := os.Open("data.json")
 	if err != nil {
-		fmt.Println("Erreur lors du marshal de la struct en JSON :", err)
+		fmt.Println("Erreur de lecture", err)
+		return
+	}
+	defer jsonFile.Close()
+
+	// Declare empty slice
+	var articles []Form
+
+	// Unmarshal JSON data
+	err = json.NewDecoder(jsonFile).Decode(&articles)
+	if err != nil {
+		fmt.Println("Erreur d'unMarshal", err)
 		return
 	}
 
 	// Append new article
-	articles = append(articles, Article{
-		Categorie: form.Categorie,
-		// map other fields
+	articles = append(articles, Form{
+		Categorie:    form.Categorie,
+		Auteur:       form.Auteur,
+		Date:         form.Date,
+		Introduction: form.Introduction,
+		Texte:        form.Texte,
 	})
 
-	// Marshall back to json
-	data, err := json.Marshal(articles)
+	// Marshal updated data
+	Data, err := json.MarshalIndent(articles, "", "  ")
+	if err != nil {
+		fmt.Println("Erreur de Marshal", err)
+		return
+	}
 
-	// Write updated json to file
+	// Write to file
+	err = os.WriteFile("data.json", Data, 0644)
+	if err != nil {
+		fmt.Println("Erreur d'écriture", err)
+		return
+	}
 
-	http.Redirect(w, r, "/", http.StatusSeeOther)
+	http.Redirect(w, r, "http://localhost:8080/?", http.StatusSeeOther)
 
-}*/
+}
