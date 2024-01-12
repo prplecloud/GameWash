@@ -35,10 +35,24 @@
   </header>
   
   <section class="home">
-  
+
+    <ul>
+        {{range .}}
+            <li>
+                <p><strong>Catégorie:</strong> {{.Categorie}} </p>
+              <p>  <strong>Auteur:</strong> {{.Auteur}} </p>
+                <p>{{.Introduction}}</p>
+                <p>{{.Texte}}</p>
+                <p>Image : {{.Images}}</p>
+
+            </li>
+        {{end}}
+    </ul>
+
   </section>
 
   <section class="content">   
+
 
   </section>
 

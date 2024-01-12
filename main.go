@@ -6,20 +6,12 @@ import (
 	"html/template"
 	"io"
 	"io/fs"
+	"io/ioutil"
+	"math/rand"
 	"net/http"
 	"os"
 	"time"
 )
-
-/*
-	type Image struct {
-		Platform   string `json:"platform"`
-		Background string `json:"background"`
-		Studio     string `json:"studio"`
-		Gameplay   string `json:"gameplay"`
-	}
-
-*/
 
 type Article struct {
 	Categorie string `json:"categorie"`
@@ -49,12 +41,19 @@ func main() {
 	}
 
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "home", nil)
+
+		articles, err := LoadArticles()
+		if err != nil {
+			fmt.Println("erreur load articles")
+			return
+		}
+		articlesChoices := getRandomArticles(articles, 10)
+		temp.ExecuteTemplate(w, "home", articlesChoices)
 	})
 
 	http.HandleFunc("/compet", func(w http.ResponseWriter, r *http.Request) {
 
-		article, err := LoadArticles()
+		article, err := LoadArticlesByCategory("Compétitif")
 		if err != nil {
 			fmt.Println("erreur load articles")
 			return
@@ -63,11 +62,23 @@ func main() {
 	})
 
 	http.HandleFunc("/vrac", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "vrac", nil)
+		article, err := LoadArticlesByCategory("Jeux en Vrac")
+		if err != nil {
+			fmt.Println("erreur load articles")
+			return
+		}
+		fmt.Println(article)
+		temp.ExecuteTemplate(w, "vrac", article)
 	})
 
 	http.HandleFunc("/coeur", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "coeur", nil)
+		article, err := LoadArticlesByCategory("Coup de Coeur")
+		if err != nil {
+			fmt.Println("erreur load articles")
+			return
+		}
+		fmt.Println(article)
+		temp.ExecuteTemplate(w, "coeur", article)
 	})
 
 	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
@@ -166,7 +177,7 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 		Auteur:       r.Form.Get("auteur"),
 		Introduction: r.Form.Get("introduction"),
 		Texte:        r.Form.Get("texte"),
-		Images:       "test",
+		Images:       headerFile.Filename,
 	}
 
 	fmt.Println(form)
@@ -177,6 +188,7 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
 	dataForms, errForms := LoadArticles()
 	if errForms != nil {
+		fmt.Println("1")
 		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errForms), http.StatusInternalServerError)
 		return
 	}
@@ -187,12 +199,14 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
 	dataWrite, errWrite := json.Marshal(dataForms)
 	if errWrite != nil {
+		fmt.Println("2")
 		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errWrite), http.StatusInternalServerError)
 		return
 	}
 
 	errWriteFile := os.WriteFile(nomFichier, dataWrite, fs.FileMode(0644))
 	if errWriteFile != nil {
+		fmt.Println("3")
 		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errWriteFile), http.StatusInternalServerError)
 		return
 	}
@@ -202,21 +216,18 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 }
 
 func ShowArticles(w http.ResponseWriter, r *http.Request) {
-	// Charger les données des articles depuis le fichier JSON
 	articles, err := LoadArticles()
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Erreur lors du chargement des articles : %v", err), http.StatusInternalServerError)
 		return
 	}
 
-	// Charger le modèle HTML
 	tmpl, err := template.ParseFiles("template.html")
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Erreur lors du chargement du modèle : %v", err), http.StatusInternalServerError)
 		return
 	}
 
-	// Exécuter le modèle avec les données des articles
 	err = tmpl.Execute(w, articles)
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Erreur lors de l'exécution du modèle : %v", err), http.StatusInternalServerError)
@@ -225,68 +236,62 @@ func ShowArticles(w http.ResponseWriter, r *http.Request) {
 }
 
 func LoadArticles() ([]Form, error) {
-
-	// Charger les articles depuis le fichier JSON
-	jsonFilePath := "data.json"
-
-	jsonData, err := os.ReadFile(jsonFilePath)
+	fileData, err := ioutil.ReadFile("data.json")
 	if err != nil {
-		fmt.Println("1")
 		return nil, err
 	}
 
-	var articles []Form
+	var forms []Form
 
-	err = json.Unmarshal(jsonData, &articles)
+	err = json.Unmarshal(fileData, &forms)
 	if err != nil {
-		fmt.Println("2")
 		return nil, err
 	}
 
-	return articles, nil
+	return forms, nil
 }
 
-/*
-// Fonction de recherche dans les données
-func search(query string, articles []Article) []Article {
+func getRandomArticles(liste []Form, nombreElements int) []Form {
+	rand.Seed(time.Now().UnixNano())
 
-	var results []Article
+	if len(liste) <= nombreElements {
+		return liste
+	}
 
-	for _, article := range articles {
+	resultat := make([]Form, nombreElements)
 
-		if strings.Contains(strings.ToLower(article.Titre), strings.ToLower(query)) ||
-			strings.Contains(strings.ToLower(article.Contenu), strings.ToLower(query)) ||
-			strings.Contains(strings.ToLower(article.Auteur), strings.ToLower(query)) {
-			results = append(results, article)
+	copieListe := append([]Form{}, liste...)
+
+	for i := 0; i < nombreElements; i++ {
+		indiceAleatoire := rand.Intn(len(copieListe))
+
+		resultat[i] = copieListe[indiceAleatoire]
+
+		copieListe = append(copieListe[:indiceAleatoire], copieListe[indiceAleatoire+1:]...)
+	}
+
+	return resultat
+}
+
+func LoadArticlesByCategory(category string) ([]Form, error) {
+	fileData, err := ioutil.ReadFile("data.json")
+	if err != nil {
+		return nil, err
+	}
+
+	var allForms []Form
+
+	err = json.Unmarshal(fileData, &allForms)
+	if err != nil {
+		return nil, err
+	}
+
+	var specifics []Form
+	for _, form := range allForms {
+		if form.Categorie == category {
+			specifics = append(specifics, form)
 		}
 	}
 
-	return results
+	return specifics, nil
 }
-
-func searchBar(w http.ResponseWriter, r *http.Request) {
-
-	query := r.URL.Query().Get("q")
-
-	if query == "" {
-		http.Error(w, "Empty search query", http.StatusBadRequest)
-		return
-	}
-
-	articles, err := LoadArticles()
-	if err != nil {
-		http.Error(w, fmt.Sprintf("Error reading JSON: %s", err), http.StatusInternalServerError)
-		return
-	}
-
-	results := search(query, articles)
-
-	// Afficher les résultats dans le navigateur
-	fmt.Println(w, "Résultats de la recherche pour '%s':\n", query)
-	for _, result := range results {
-
-		fmt.Println(w, "Catégorie: %s, Titre: %s, Auteur: %s, Contenu: %s, Images: %s\n",
-			result.Categorie, result.Titre, result.Auteur, result.Contenu, result.Images)
-	}
-}
-*/

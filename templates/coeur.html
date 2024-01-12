@@ -35,10 +35,24 @@
   </header>
   
   <section class="home">
-  
+
+    <ul>
+        {{range .}}
+            <li>
+                <p><strong>Catégorie:</strong> {{.Categorie}} </p>
+              <p>  <strong>Auteur:</strong> {{.Auteur}} </p>
+                <p>{{.Introduction}}</p>
+                <p>{{.Texte}}</p>
+                <p>Image : {{.Images}}</p>
+
+            </li>
+        {{end}}
+    </ul>
+
   </section>
 
   <section class="content">   
+
 
   </section>
 
@@ -71,7 +85,7 @@
 <footer class="foot">
   <div class="footer">
     <a class="footing" href="http://localhost:8080/about">About</a>
-    <a class="footing" href="https://github.com/Corindpz?tab=repositoriest" target="_blank">Contact</a>
+    <a class="footing" href="https://github.com/Corindpz?tab=repositories" target="_blank">Contact</a>
   </div>
 </footer>
 </html>
