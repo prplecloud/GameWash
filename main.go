@@ -242,15 +242,15 @@ func LoadArticles() ([]Form, error) {
 		fmt.Println("2")
 		return nil, err
 	}
-	fmt.Println("3")
+
 	return articles, nil
 }
 
 /*
 // Fonction de recherche dans les données
-func search(query string, articles Article) Article {
+func search(query string, articles []Article) []Article {
 
-	var results Article
+	var results []Article
 
 	for _, article := range articles {
 
@@ -267,6 +267,7 @@ func search(query string, articles Article) Article {
 func searchBar(w http.ResponseWriter, r *http.Request) {
 
 	query := r.URL.Query().Get("q")
+
 	if query == "" {
 		http.Error(w, "Empty search query", http.StatusBadRequest)
 		return
