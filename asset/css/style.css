@@ -437,6 +437,7 @@ footer {
     justify-content: space-around;
     animation: zoomOut 0.5s ease 0s 1 normal backwards;
     font-size: 2.5vh;
+    cursor: pointer;
 }
 
 .articleuni > p{
@@ -450,13 +451,15 @@ footer {
 
 
 
-.content p {
-    opacity: 0;
+#hidden-paragraph {
+    display: none;
 }
 
  .image{
     max-width: 20%;
 }
+
+
 
 .intro {
 

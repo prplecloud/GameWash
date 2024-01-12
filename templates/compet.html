@@ -38,12 +38,12 @@
     <div class="articles">
     <ul>
         {{range .}}
-          <li class="articleuni">  
-              <img class="image" src="/static/uploads/{{.Images}}" >
+          <li class="articleuni" onclick="afficherParagraphe()">
+              <img class="image" id="images" src="/static/uploads/{{.Images}}" >
               <p class="intro">{{.Introduction}}</p>
               <p class="auteur">  <strong>Auteur:</strong> {{.Auteur}} </p>
                 <div class="content" id="txthide" style="opacity: 0;">
-                  <p>{{.Texte}}</p>
+                  <p  id="hidden-paragraph">{{.Texte}}</p>
                 </div>
 
             </li>
@@ -59,7 +59,18 @@
 
   <script> 
 
-    
+function afficherParagraphe() {
+            var paragraph = document.getElementById("hidden-paragraph");
+            paragraph.style.display = "block";
+            var image = document.getElementById("images");
+            var tailleActuelle = window.getComputedStyle(image, null).getPropertyValue("width");
+            if (tailleActuelle == "20%") {
+              image.style.width = "100%";
+            
+            }else {
+              image.style.width = "20%";
+            }
+        }
 
 
     window.addEventListener("scroll", () => {
