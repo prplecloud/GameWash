@@ -10,6 +10,7 @@ import (
 	"math/rand"
 	"net/http"
 	"os"
+	"strings"
 	"time"
 )
 
@@ -67,7 +68,6 @@ func main() {
 			fmt.Println("erreur load articles")
 			return
 		}
-		fmt.Println(article)
 		temp.ExecuteTemplate(w, "vrac", article)
 	})
 
@@ -77,7 +77,6 @@ func main() {
 			fmt.Println("erreur load articles")
 			return
 		}
-		fmt.Println(article)
 		temp.ExecuteTemplate(w, "coeur", article)
 	})
 
@@ -85,10 +84,13 @@ func main() {
 		temp.ExecuteTemplate(w, "login", nil)
 	})
 
-	//http.HandleFunc("/login/treatment", func(w http.ResponseWriter, r *http.Request) {
-	//logs = Login{r.FormValue("Username"), r.FormValue("Passwd")}
-	//temp.ExecuteTemplate(w, "login", nil)
-	//})
+	http.HandleFunc("/result", func(w http.ResponseWriter, r *http.Request) {
+		recherche := r.URL.Query().Get("content")
+
+		articles, _ := rechercheTitre("data.json", recherche)
+
+		temp.ExecuteTemplate(w, "result", articles)
+	})
 
 	http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "contact", nil)
@@ -112,7 +114,6 @@ func main() {
 	fileserver := http.FileServer(http.Dir(rootDoc + "/asset"))
 	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
 	fmt.Println("Serveur démarré sur le port 8080...")
-	Json()
 	http.ListenAndServe("localhost:8080", nil)
 }
 
@@ -131,24 +132,17 @@ func Json() {
 		fmt.Println("Erreur lors du marshal de la struct en JSON :", err)
 		return
 	}
-	fmt.Println(ArticleData)
 }
 
 func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
-	// Chemin du fichier JSON
 	nomFichier := "data.json"
 
-	// Récupérer les données du formulaire de la requête HTTP
 	err := r.ParseForm()
 	if err != nil {
 		http.Error(w, "Erreur lors de l'analyse du formulaire", http.StatusInternalServerError)
 		return
 	}
-
-	fmt.Println(r.Form.Get("categorie"))
-
-	fmt.Println(r.Form.Get("auteur"))
 
 	dataFile, headerFile, errFile := r.FormFile("file")
 	if errFile != nil {
@@ -160,15 +154,12 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 	File, errOpen := os.OpenFile(("./asset/uploads/" + headerFile.Filename), os.O_CREATE, 0644)
 	if errOpen != nil {
 
-		fmt.Println("Erreur ouverture")
 	}
 
 	defer File.Close()
 
 	_, errCopy := io.Copy(File, dataFile)
 	if errCopy != nil {
-
-		fmt.Println("erreur avec la copie du fichier....")
 	}
 
 	// Créer une nouvelle instance de Form à partir des données du formulaire
@@ -180,7 +171,6 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 		Images:       headerFile.Filename,
 	}
 
-	fmt.Println(form)
 	// Ajouter la date actuelle si elle n'est pas fournie dans le formulaire
 	if form.Date == "" {
 		form.Date = time.Now().Format("2006-01-02")
@@ -188,25 +178,21 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
 	dataForms, errForms := LoadArticles()
 	if errForms != nil {
-		fmt.Println("1")
 		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errForms), http.StatusInternalServerError)
 		return
 	}
 
 	// Ajouter la nouvelle forme à la liste
 	dataForms = append(dataForms, form)
-	fmt.Println(dataForms)
 
 	dataWrite, errWrite := json.Marshal(dataForms)
 	if errWrite != nil {
-		fmt.Println("2")
 		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errWrite), http.StatusInternalServerError)
 		return
 	}
 
 	errWriteFile := os.WriteFile(nomFichier, dataWrite, fs.FileMode(0644))
 	if errWriteFile != nil {
-		fmt.Println("3")
 		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errWriteFile), http.StatusInternalServerError)
 		return
 	}
@@ -294,4 +280,28 @@ func LoadArticlesByCategory(category string) ([]Form, error) {
 	}
 
 	return specifics, nil
+}
+
+func rechercheTitre(file string, substr string) ([]Form, error) {
+	var articles []Form
+
+	data, err := ioutil.ReadFile(file)
+	if err != nil {
+		return nil, err
+	}
+
+	err = json.Unmarshal(data, &articles)
+	if err != nil {
+		return nil, err
+	}
+
+	var result []Form
+	for _, article := range articles {
+		if strings.Contains(article.Introduction, substr) {
+			fmt.Println("[RECHERCHE] On ajoute : " + article.Introduction)
+			result = append(result, article)
+		}
+	}
+
+	return result, nil
 }
