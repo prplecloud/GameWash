@@ -9,14 +9,16 @@
 </head>
 <body>
     <a class="retour" href="http://localhost:8080/home"><i class="fa-solid fa-arrow-left"></i>&#8592; Retour</a>
-    <form class="form" method="get" action="/form/treatment" enctype="multipart/form-data">
+    <form class="form" method="post" action="/form/treatment" enctype="multipart/form-data">
         <i class=""></i>
+
         <label for="categorie">Catégorie</label>
             <select class="select" name="categorie" id="categorie" multiple>
                  <option value="Compétitif">Compétitif</option>
                  <option value="Jeux en Vrac">Jeux en Vrac</option>
                  <option value="Coup de Coeur">Coup de Coeur</option>
             </select>
+
         <label for="auteur">Auteur</label>
         <select class="select" name="auteur" id="auteur" multiple>
              <option value="Corentin">Corentin</option>
@@ -24,6 +26,7 @@
              <option value="Morgane">Morgane</option>
              <option value="Luca">Luca</option>
         </select>
+
         <p class=""></p>
         <label for="Introduction">Introduction</label>
 
@@ -35,7 +38,7 @@
         </textarea>
 
         <label for="file">Sélectionnez un fichier</label>
-        <input type="file" id="file" name="file" accept=".png, .jpg, .jpeg" multiple>
+        <input type="file" id="file" name="file" accept=".png, .jpg, .jpeg">
 
         <button type="submit">Publier</button>
     </form>

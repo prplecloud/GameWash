@@ -4,52 +4,38 @@ import (
 	"encoding/json"
 	"fmt"
 	"html/template"
+	"io"
+	"io/fs"
 	"net/http"
 	"os"
 	"time"
 )
 
-type Image struct {
-	Platform   string `json:"platform"`
-	Background string `json:"background"`
-	Studio     string `json:"studio"`
-	Gameplay   string `json:"gameplay"`
-}
-
 /*
-	 type Article struct {
-		Categorie string  `json:"categorie"`
-		Titre     string  `json:"titre"`
-		Auteur    string  `json:"auteur"`
-		Contenu   string  `json:"contenu"`
-		Images    []Image `json:"images"`
-		URL       string  `json:"url"`
+	type Image struct {
+		Platform   string `json:"platform"`
+		Background string `json:"background"`
+		Studio     string `json:"studio"`
+		Gameplay   string `json:"gameplay"`
 	}
+
 */
+
 type Article struct {
 	Categorie string `json:"categorie"`
 	Titre     string `json:"titre"`
 	Auteur    string `json:"auteur"`
 	Contenu   string `json:"contenu"`
-	Images    struct {
-		Platform   string `json:"platform"`
-		Background string `json:"background"`
-		Studio     string `json:"studio"`
-		Gameplay   string `json:"gameplay"`
-	} `json:"images"`
+	Images    string `json:"images"`
 }
+
 type Form struct {
 	Categorie    string `json:"categorie"`
 	Auteur       string `json:"auteur"`
 	Date         string `json:"date"`
 	Introduction string `json:"introduction"`
 	Texte        string `json:"texte"`
-	Images       struct {
-		Platform   string `json:"platform"`
-		Background string `json:"background"`
-		Studio     string `json:"studio"`
-		Gameplay   string `json:"gameplay"`
-	} `json:"images"`
+	Images       string `json:"images"`
 }
 
 //var logs Login
@@ -67,9 +53,10 @@ func main() {
 	})
 
 	http.HandleFunc("/compet", func(w http.ResponseWriter, r *http.Request) {
+
 		article, err := LoadArticles()
 		if err != nil {
-			fmt.Println("erreur")
+			fmt.Println("erreur load articles")
 			return
 		}
 		temp.ExecuteTemplate(w, "compet", article)
@@ -109,6 +96,7 @@ func main() {
 	})
 
 	http.HandleFunc("/form/treatment", FormSubmission)
+
 	rootDoc, _ := os.Getwd()
 	fileserver := http.FileServer(http.Dir(rootDoc + "/asset"))
 	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
@@ -118,7 +106,7 @@ func main() {
 }
 
 func Json() {
-	jsonFilePath := "./base.json"
+	jsonFilePath := "base.json"
 	jsonData, err := os.ReadFile(jsonFilePath)
 	if err != nil {
 		fmt.Println("Erreur lors de la lecture du fichier JSON :", err)
@@ -151,12 +139,34 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
 	fmt.Println(r.Form.Get("auteur"))
 
+	dataFile, headerFile, errFile := r.FormFile("file")
+	if errFile != nil {
+
+		fmt.Println("erreur avec le fichier....")
+	}
+	defer dataFile.Close()
+
+	File, errOpen := os.OpenFile(("./asset/uploads/" + headerFile.Filename), os.O_CREATE, 0644)
+	if errOpen != nil {
+
+		fmt.Println("Erreur ouverture")
+	}
+
+	defer File.Close()
+
+	_, errCopy := io.Copy(File, dataFile)
+	if errCopy != nil {
+
+		fmt.Println("erreur avec la copie du fichier....")
+	}
+
 	// Créer une nouvelle instance de Form à partir des données du formulaire
 	form := Form{
 		Categorie:    r.Form.Get("categorie"),
 		Auteur:       r.Form.Get("auteur"),
 		Introduction: r.Form.Get("introduction"),
 		Texte:        r.Form.Get("texte"),
+		Images:       "test",
 	}
 
 	fmt.Println(form)
@@ -165,40 +175,25 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 		form.Date = time.Now().Format("2006-01-02")
 	}
 
-	// Ouvrir le fichier en mode lecture/écriture ou le créer s'il n'existe pas
-	fichier, err := os.OpenFile(nomFichier, os.O_RDWR|os.O_CREATE, 0644)
-	if err != nil {
-		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", err), http.StatusInternalServerError)
-		return
-	}
-
-	defer fichier.Close()
-
-	// Charger le contenu actuel du fichier
-	var forms []Form
-
-	if err := json.NewDecoder(fichier).Decode(&forms); err != nil && err.Error() != "EOF" {
-		http.Error(w, fmt.Sprintf("Erreur lors de la lecture du fichier JSON : %v", err), http.StatusInternalServerError)
+	dataForms, errForms := LoadArticles()
+	if errForms != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errForms), http.StatusInternalServerError)
 		return
 	}
 
 	// Ajouter la nouvelle forme à la liste
-	forms = append(forms, form)
+	dataForms = append(dataForms, form)
+	fmt.Println(dataForms)
 
-	// Réécrire le fichier avec la nouvelle liste sans tronquer
-	fichier.Seek(0, 0)
-	if err := fichier.Truncate(0); err != nil {
-		http.Error(w, fmt.Sprintf("Erreur lors de la troncature du fichier : %v", err), http.StatusInternalServerError)
+	dataWrite, errWrite := json.Marshal(dataForms)
+	if errWrite != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errWrite), http.StatusInternalServerError)
 		return
 	}
 
-	if _, err := fichier.Seek(0, 0); err != nil {
-		http.Error(w, fmt.Sprintf("Erreur lors du positionnement du curseur au début du fichier : %v", err), http.StatusInternalServerError)
-		return
-	}
-
-	if err := json.NewEncoder(fichier).Encode(forms); err != nil {
-		http.Error(w, fmt.Sprintf("Erreur lors de l'écriture du fichier JSON : %v", err), http.StatusInternalServerError)
+	errWriteFile := os.WriteFile(nomFichier, dataWrite, fs.FileMode(0644))
+	if errWriteFile != nil {
+		http.Error(w, fmt.Sprintf("Erreur lors de l'ouverture du fichier : %v", errWriteFile), http.StatusInternalServerError)
 		return
 	}
 
@@ -230,10 +225,13 @@ func ShowArticles(w http.ResponseWriter, r *http.Request) {
 }
 
 func LoadArticles() ([]Form, error) {
+
 	// Charger les articles depuis le fichier JSON
 	jsonFilePath := "data.json"
+
 	jsonData, err := os.ReadFile(jsonFilePath)
 	if err != nil {
+		fmt.Println("1")
 		return nil, err
 	}
 
@@ -241,8 +239,53 @@ func LoadArticles() ([]Form, error) {
 
 	err = json.Unmarshal(jsonData, &articles)
 	if err != nil {
+		fmt.Println("2")
 		return nil, err
 	}
-
+	fmt.Println("3")
 	return articles, nil
 }
+
+/*
+// Fonction de recherche dans les données
+func search(query string, articles Article) Article {
+
+	var results Article
+
+	for _, article := range articles {
+
+		if strings.Contains(strings.ToLower(article.Titre), strings.ToLower(query)) ||
+			strings.Contains(strings.ToLower(article.Contenu), strings.ToLower(query)) ||
+			strings.Contains(strings.ToLower(article.Auteur), strings.ToLower(query)) {
+			results = append(results, article)
+		}
+	}
+
+	return results
+}
+
+func searchBar(w http.ResponseWriter, r *http.Request) {
+
+	query := r.URL.Query().Get("q")
+	if query == "" {
+		http.Error(w, "Empty search query", http.StatusBadRequest)
+		return
+	}
+
+	articles, err := LoadArticles()
+	if err != nil {
+		http.Error(w, fmt.Sprintf("Error reading JSON: %s", err), http.StatusInternalServerError)
+		return
+	}
+
+	results := search(query, articles)
+
+	// Afficher les résultats dans le navigateur
+	fmt.Println(w, "Résultats de la recherche pour '%s':\n", query)
+	for _, result := range results {
+
+		fmt.Println(w, "Catégorie: %s, Titre: %s, Auteur: %s, Contenu: %s, Images: %s\n",
+			result.Categorie, result.Titre, result.Auteur, result.Contenu, result.Images)
+	}
+}
+*/
