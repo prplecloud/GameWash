@@ -421,6 +421,8 @@ footer {
 }
 
 .articles {
+    color: #fff;
+    display: flex;
     
 }
 
