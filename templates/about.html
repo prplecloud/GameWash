@@ -5,24 +5,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GameWash Blog</title>
-  <link rel="stylesheet" href="static/css/style.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="stylesheet" href="static/css/about.css">
 </head>
 <body>
 
   <header>
     <div class="nav-bar">
       <div id="title-img">  
-        <img src="/static/image/logo.png" class="logo"></img>
-        <span class="title">GameWash</span></div>
-      <div class="navigation">
-        <div class="nav-items">
-          <i class="uil uil-times nav-close-btn"></i>
-          <a href="http://localhost:8080/compet"><i class="uil uil-crosshair"></i> Compétitif</a>
-          <a href="http://localhost:8080/vrac"><i class="uil uil-folden-open"></i>Jeux en Vrac</a>
-          <a href="http://localhost:8080/coeur"><i class="uil uil-heart-sign"></i>Coup de coeur</a>
-          <a href="http://localhost:8080/login"><i class="uil uil-head-side"></i>Login</a>
-        </div>
+        <a href="http://localhost:8080/home#"><img src="/static/image/logo.png" class="logo"></img></a>
+        <span class="title">GameWash(AboutTheProject)</span></div>		<!-- Création d'une barre pour taper du texte que j'ai nommé "search-txt" et j'ai fait afficher "Tape ta recherche" dans la barre lorsque la barre est vide -->
+        
+        <a id="retourlobby" href="http://localhost:8080/home"><i class="fa-solid fa-arrow-left"></i>&#8592; Retour</a>
       </div>
       <i class="uil uil-apps nav-menu-btn"></i>
     </div>
@@ -30,13 +23,75 @@
       <div class="scroll-indicator-bar"></div>
     </div>
   </header>
-
+  
   <section class="home">
-    
+    <div class="restedroit">
+    <p class="txtabout">
+      Morgane Ortiz, Corentin Deprez, Luca Barbirou, Abdallah Merad<br><br><br>
+      https://github.com/prplecloud <br><br>
+      https://github.com/baluva <br><br>
+      https://github.com/Corindpz <br><br>
+      https://github.com/AbdallahYnov <br><br>
+      Le thème que nous avons choisi est "les jeux vidéos".<br>En effet meme si ce thème peut paraître comme simple au premier abords,<br>
+      les jeux vidéos parlent a tout les membres de notre groupe et la diversité que ce domaine présente reflète notre personnalité.*
+      On pourrait même associer chaque catégorie aux membres du groupe, tant chacun y a mit son grain de sel. Dans la catégorie jeux en vrac,
+      on retrouve tout les jeux auquels on a joué mais qu'on ne pouvait pas qualifier proprement car "communs". On retrouve ensuite
+      la catégorie coups de coeur où vont se situer tout nos jeux préférés et/ou qui nous ont marqués. Enfin la catégorie Compétitif
+      regroupe les jeux où il y a de la compétition comme son nom l'indique.<br><br><br><br>
+    </p>
+    <img class="trello" alt="trello" src="static/image/trello.png">
+    <p class="txtabout">
+      Nous avons eu beaucoup de difficultés concernant le back-end de ce projet étant donné que c'était notre premiere fois a tous qu'on
+      développait un site de ce genre. Il nous a donc fallu apprendre a gérer nos données via un JSON, traiter ces données tout en gardant un aspect front-end afin de rendre ca agréable.
+      Ce fût un sacré défi qu'on s'est donné comme objectif de relever et grâce a ce projet on a tous appris a faire des choses différentes, ce qui est très enrichissant.<br><br><br><br>
+    </p>
+    <p class="txtabout">
+      Mentions légales:<br><br><br>
+
+      1. Éditeur du site :<br><br>
+
+      Gamewash Industries <br>
+      11 rue des apagnans<br>
+      0781395265<br>
+      cramptés@apagnans.com<br>
+      <br><br>
+      2. Directeur de la publication :<br><br>
+
+      Morgane Crampté<br>
+      MorganeCramptés@apignouf.com<br><br>
+
+      3. Propriété intellectuelle :<br><br>
+
+      Le contenu de ce site (textes, images, vidéos, etc.) est la propriété exclusive de Google sauf indication contraire. Toute reproduction, distribution, ou utilisation non autorisée du contenu est interdite.<br>
+      <br>
+      4. Collecte de données personnelles :<br><br>
+
+      Les données personnelles collectées sur ce site sont utilisées uniquement à des fins journalistique. Aucune information personnelle n'est cédée à des tiers.<br>
+      <br>
+      5. Cookies :<br><br>
+
+      Ce site utilise des cookies pour améliorer l'expérience de l'utilisateur. En naviguant sur ce site, vous consentez à l'utilisation des cookies.<br>
+      <br>
+      6. Responsabilité :<br><br>
+
+      Gamewash décline toute responsabilité quant à l'exactitude ou à l'exhaustivité des informations présentes sur le site. L'utilisateur est seul responsable de l'utilisation des informations fournies.<br>
+      <br>
+      7. Liens externes :<br><br>
+
+      Ce site peut contenir des liens vers des sites externes sur lesquels Comoluab n'a aucun contrôle. Nous déclinons toute responsabilité quant au contenu de ces sites.<br>
+      <br>
+      8. Contact :<br><br>
+      <br>
+      Pour toute question ou préoccupation concernant ces mentions légales, veuillez nous contacter à l'adresse suivante : avv04@protonmail.com.<br>
+      <br>
+      Date de dernière mise à jour : 12/01/2024<br>
+
+    </p>
+  </div>
   </section>
 
-  <section class="content">
-    
+  <section class="content">   
+
   </section>
 
   <script>
@@ -67,8 +122,6 @@
 </body>
 <footer class="foot">
   <div class="footer">
-    <a class="footing" href="http://localhost:8080/about">About</a>
-    <a class="footing" href="http://localhost:8080/contact">Contact</a>
   </div>
 </footer>
 </html>

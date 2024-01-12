@@ -55,6 +55,21 @@ header .nav-bar {
     background: rgba(255, 255, 255, 0.1);
 }
 
+#retourlobby  {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 4rem;
+    font-size: 4vh;
+}
+
+#retourlobby:hover {
+    text-shadow:  0 0 10px #fff, 
+               0 0 10px #fff, 
+               0 0 42px rgb(255, 255, 255),   
+               0 0 77px rgb(255, 254, 255), 
+               0 0 100px rgb(255, 255, 255)
+}
+
 #title-img {
     display: flex;
     flex-direction: row;
@@ -128,7 +143,7 @@ section{
     min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-direction: row;
 }
 
 .home:before{
@@ -161,6 +176,9 @@ section{
     margin: 30px 0;
 }
 
+.home {
+    flex-direction: column;
+}
 /*======= Scroll bar =======*/
 ::-webkit-scrollbar{
     background: #fff;
@@ -334,3 +352,94 @@ footer {
                0 0 100px rgb(255, 255, 255)
 }
 
+.search-box {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	background: #B895B0;
+	height: 40px;
+	border-radius: 40px;
+	padding: 10px;
+    width: 40%;
+}
+.search-box:hover > .search-txt {
+	width: 240px;
+	padding: 0 6px;
+}
+
+
+
+.search-txt {			
+	border: none;
+	background: none;
+	outline: none;
+	float: left;
+	color: white;
+	font-size: 20px;
+	transition: 0.4s;
+	line-height: 10px;	
+	width: 0px;
+}
+
+.loupe {
+    height: 2vh;
+} 
+
+.loupebtn {
+    background-color: #B895B0;
+    border: none;
+}
+
+.txtabout {
+    color: #fff;
+    font-size: 2vh;
+}
+
+.restedroit {
+    margin-top: 12rem;
+}
+
+/* CSS des articles */
+
+@keyframes zoom {
+    0%{
+        transform: scale(1)
+    }
+    100%{
+        transform: scale(1.3)
+    }
+}
+
+@keyframes zoomOut {
+    0%{
+        transform: scale(1.3)
+    }
+    100%{
+        transform: scale(1)
+    }
+}
+
+.articles {
+    color: #fff;
+    display: flex;
+    
+}
+
+.articles > img{
+
+}
+
+.articles > .intro {
+
+
+}
+
+.articles > .content {
+
+
+}
+
+.articles > .date {
+       
+}

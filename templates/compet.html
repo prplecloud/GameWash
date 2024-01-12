@@ -6,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GameWash Blog</title>
   <link rel="stylesheet" href="static/css/style.css">
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 </head>
 <body>
 
   <header>
     <div class="nav-bar">
       <div id="title-img">  
-        <img src="/static/image/logo.png" class="logo"></img>
+        <a href="http://localhost:8080/home#"><img src="/static/image/logo.png" class="logo"></img></a>
         <span class="title">GameWash</span></div>
       <div class="navigation">
         <div class="nav-items">
@@ -22,6 +21,10 @@
           <a href="http://localhost:8080/vrac"><i class="uil uil-folden-open"></i>Jeux en Vrac</a>
           <a href="http://localhost:8080/coeur"><i class="uil uil-heart-sign"></i>Coup de coeur</a>
           <a href="http://localhost:8080/login"><i class="uil uil-head-side"></i>Login</a>
+          <div class="search-box">
+            <input class="search-txt" type="text" name="" placeholder="Tape ta recherche">
+            <button class="loupebtn" type="submit"><img class="loupe" src="static/image/loupe.png"></button>		<!-- Création d'une barre pour taper du texte que j'ai nommé "search-txt" et j'ai fait afficher "Tape ta recherche" dans la barre lorsque la barre est vide -->
+          </div>
         </div>
       </div>
       <i class="uil uil-apps nav-menu-btn"></i>
@@ -30,13 +33,27 @@
       <div class="scroll-indicator-bar"></div>
     </div>
   </header>
-
+  
   <section class="home">
-    
+    <div class="articles">
+    <ul>
+        {{range .}}
+            <li>
+                <p><strong>Catégorie:</strong> {{.Categorie}} </p>
+              <p>  <strong>Auteur:</strong> {{.Auteur}} </p>
+                <p>{{.Introduction}}</p>
+                <p>{{.Texte}}</p>
+                <img src="/static/uploads/{{.Images}}" >
+
+            </li>
+        {{end}}
+    </ul>
+  </div>
   </section>
 
-  <section class="content">
-    
+  <section class="content">   
+
+
   </section>
 
   <script>
@@ -68,7 +85,7 @@
 <footer class="foot">
   <div class="footer">
     <a class="footing" href="http://localhost:8080/about">About</a>
-    <a class="footing" href="http://localhost:8080/contact">Contact</a>
+    <a class="footing" href="https://github.com/Corindpz?tab=repositories" target="_blank">Contact</a>
   </div>
 </footer>
 </html>
