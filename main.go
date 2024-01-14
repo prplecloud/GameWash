@@ -305,3 +305,13 @@ func rechercheTitre(file string, substr string) ([]Form, error) {
 
 	return result, nil
 }
+
+func DefaultHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusNotFound)
+
+	err := temp.ExecuteTemplate(w, "erreur", nil)
+	if err != nil {
+		http.Error(w, "Erreur interne du serveur", http.StatusInternalServerError)
+		return
+	}
+}
