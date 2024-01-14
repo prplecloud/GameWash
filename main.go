@@ -31,8 +31,6 @@ type Form struct {
 	Images       string `json:"images"`
 }
 
-//var logs Login
-
 func main() {
 
 	temp, err := template.ParseGlob("./templates/*.html")
@@ -260,7 +258,7 @@ func getRandomArticles(liste []Form, nombreElements int) []Form {
 }
 
 func LoadArticlesByCategory(category string) ([]Form, error) {
-	fileData, err := os.ReadFile("data.json")
+	fileData, err := ioutil.ReadFile("data.json")
 	if err != nil {
 		return nil, err
 	}
