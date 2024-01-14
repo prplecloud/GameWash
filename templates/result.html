@@ -1,4 +1,4 @@
-{{define "home"}}
+{{define "result"}}
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -37,21 +37,20 @@
   </header>
   
   <section class="home">
-    <div class="articles">
+    <h1>Résultats de la recherche</h1>
     <ul>
         {{range .}}
-          <li class="articleuni" onclick="afficherParagraphe()">  
-              <img class="image" src="/static/uploads/{{.Images}}" >
-              <p class="intro">{{.Introduction}}</p>
-              <p class="auteur">  <strong>Auteur:</strong> {{.Auteur}} </p>
-                <div class="content" id="txthide" style="opacity: 0;">
-                  <p  id="hidden-paragraph">{{.Texte}}</p>
-                </div>
+            <li>
+                <p><strong>Catégorie:</strong> {{.Categorie}} </p>
+              <p>  <strong>Auteur:</strong> {{.Auteur}} </p>
+                <p>{{.Introduction}}</p>
+                <p>{{.Texte}}</p>
+                <p>Image : {{.Images}}</p>
 
             </li>
         {{end}}
     </ul>
-  </div>
+
   </section>
 
   <section class="content">   
@@ -59,14 +58,7 @@
 
   </section>
 
-  <script> 
-
-function afficherParagraphe() {
-            var paragraph = document.getElementById("hidden-paragraph");
-            paragraph.style.display = "block";
-        }
-
-
+  <script>
     window.addEventListener("scroll", () => {
       const indicatorBar = document.querySelector(".scroll-indicator-bar");
 
