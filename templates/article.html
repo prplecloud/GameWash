@@ -1,0 +1,89 @@
+{{define "article"}}
+<html lang="fr" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameWash Blog</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<header>
+    <div class="nav-bar">
+        <div id="title-img">
+            <a href="http://localhost:8080/home#"><img src="/static/image/logo.png" class="logo"></img></a>
+            <span class="title">GameWash</span></div>
+        <div class="navigation">
+            <div class="nav-items">
+                <i class="uil uil-times nav-close-btn"></i>
+                <a href="http://localhost:8080/compet"><i class="uil uil-crosshair"></i> Compétitif</a>
+                <a href="http://localhost:8080/vrac"><i class="uil uil-folden-open"></i>Jeux en Vrac</a>
+                <a href="http://localhost:8080/coeur"><i class="uil uil-heart-sign"></i>Coup de coeur</a>
+                <a href="http://localhost:8080/login"><i class="uil uil-head-side"></i>Login</a>
+                <form action="/result" method="get">
+                    <input class="input" type="search" name="content" placeholder="Rechercher" />
+                </form>
+            </div>
+        </div>
+        <i class="uil uil-apps nav-menu-btn"></i>
+    </div>
+    <div class="scroll-indicator-container">
+        <div class="scroll-indicator-bar"></div>
+    </div>
+</header>
+<section class="home">
+    <div class="articles">
+        <ul>
+            <img class="image" src="/static/uploads/{{.Images}}" >
+            <p class="intro">{{.Introduction}}</p>
+            <p class="auteur">  <strong>Auteur:</strong> {{.Auteur}} </p>
+            <p >{{.Texte}}</p>
+        </ul>
+    </div>
+</section>
+
+<section class="content">
+
+
+</section>
+
+<script>
+
+    function afficherParagraphe() {
+        var paragraph = document.getElementById("hidden-paragraph");
+        paragraph.style.display = "block";
+    }
+
+
+    window.addEventListener("scroll", () => {
+        const indicatorBar = document.querySelector(".scroll-indicator-bar");
+
+        const pageScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrollValue = (pageScroll / height) * 100;
+
+        indicatorBar.style.width = scrollValue + "%";
+    });
+
+    //Responsive navigation menu toggle
+    const menuBtn = document.querySelector(".nav-menu-btn");
+    const closeBtn = document.querySelector(".nav-close-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+        navigation.classList.add("active");
+    });
+
+    closeBtn.addEventListener("click", () => {
+        navigation.classList.remove("active");
+    });
+</script>
+</body>
+<footer class="foot">
+    <div class="footer">
+        <a class="footing" href="http://localhost:8080/about">About</a>
+        <a class="footing" href="https://github.com/Corindpz?tab=repositories" target="_blank">Contact</a>
+    </div>
+</footer>
+</html>
+{{end}}

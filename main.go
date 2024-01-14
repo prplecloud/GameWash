@@ -6,6 +6,7 @@ import (
 	"html/template"
 	"io"
 	"io/fs"
+	"io/ioutil"
 	"math/rand"
 	"net/http"
 	"os"
@@ -29,7 +30,18 @@ type Form struct {
 	Introduction string `json:"introduction"`
 	Texte        string `json:"texte"`
 	Images       string `json:"images"`
-	ID           int    `json: id`
+	ID           int    `json:"id"`
+}
+
+type Utilisateur struct {
+	ID         int    `json:"id"`
+	Nom        string `json:"nom"`
+	Email      string `json:"email"`
+	MotDePasse string `json:"mot_de_passe"`
+}
+
+type AdminData struct {
+	Utilisateurs []Utilisateur `json:"utilisateurs"`
 }
 
 func main() {
@@ -41,8 +53,8 @@ func main() {
 	}
 
 	http.HandleFunc("/home", func(w http.ResponseWriter, r *http.Request) {
-
 		articles, err := LoadArticles()
+		fmt.Println(articles)
 		if err != nil {
 			fmt.Println("erreur load articles")
 			return
@@ -79,6 +91,23 @@ func main() {
 		temp.ExecuteTemplate(w, "coeur", article)
 	})
 
+	http.HandleFunc("/submit_login", func(w http.ResponseWriter, r *http.Request) {
+		if r.Method != http.MethodPost {
+			http.Redirect(w, r, "/login", http.StatusSeeOther)
+			return
+		}
+		r.ParseForm()
+		username := r.FormValue("UserName")
+		password := r.FormValue("Password")
+
+		if verifierCredentials(username, password) {
+			temp.ExecuteTemplate(w, "/admin", nil)
+			http.Redirect(w, r, "/admin", http.StatusSeeOther)
+		} else {
+			http.Redirect(w, r, "/login", http.StatusSeeOther)
+		}
+	})
+
 	http.HandleFunc("/login", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "login", nil)
 	})
@@ -93,6 +122,14 @@ func main() {
 
 	http.HandleFunc("/contact", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "contact", nil)
+	})
+
+	http.HandleFunc("/article", func(w http.ResponseWriter, r *http.Request) {
+		id := r.URL.Query().Get("id")
+		id2, _ := strconv.Atoi(id)
+		article, _ := getArticle("data.json", id2)
+
+		temp.ExecuteTemplate(w, "article", article)
 	})
 
 	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
@@ -112,6 +149,51 @@ func main() {
 	http.Handle("/static/", http.StripPrefix("/static/", fileserver))
 	fmt.Println("Serveur démarré sur le port 8080...")
 	http.ListenAndServe("localhost:8080", nil)
+}
+
+func verifierCredentials(username, motDePasse string) bool {
+	file, _ := ioutil.ReadFile("admin.json")
+
+	var adminData AdminData
+	json.Unmarshal(file, &adminData)
+
+	for _, utilisateur := range adminData.Utilisateurs {
+		if utilisateur.Nom == username && utilisateur.MotDePasse == motDePasse {
+			return true
+		}
+	}
+
+	return false
+}
+
+func getArticle(filePath string, id int) (Form, error) {
+	var articles []Form
+
+	// Lire le fichier JSON
+	file, err := os.Open(filePath)
+	if err != nil {
+		return Form{}, err
+	}
+	defer file.Close()
+
+	bytes, err := ioutil.ReadAll(file)
+	if err != nil {
+		return Form{}, err
+	}
+
+	// Décoder le JSON
+	err = json.Unmarshal(bytes, &articles)
+	if err != nil {
+		return Form{}, err
+	}
+
+	for _, article := range articles {
+		if article.ID == id {
+			return article, nil
+		}
+	}
+
+	return Form{}, fmt.Errorf("article avec ID %d non trouvé", id)
 }
 
 func Json() {

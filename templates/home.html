@@ -1,5 +1,4 @@
 {{define "home"}}
-<!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
   <meta charset="utf-8">
@@ -38,6 +37,7 @@
     <div class="articles">
     <ul>
         {{range .}}
+      <a href="/article?id={{.ID}}">
           <li class="articleuni" onclick="afficherParagraphe()">  
               <img class="image" src="/static/uploads/{{.Images}}" >
               <p class="intro">{{.Introduction}}</p>
@@ -47,6 +47,7 @@
                 </div>
 
             </li>
+      </a>
         {{end}}
     </ul>
   </div>

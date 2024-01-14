@@ -37,6 +37,7 @@
     <div class="articles">
     <ul>
         {{range .}}
+      <a href="/article?id={{.ID}}">
           <li class="articleuni" onclick="afficherParagraphe()">
               <img class="image" id="images" src="/static/uploads/{{.Images}}" >
               <p class="intro">{{.Introduction}}</p>
@@ -47,6 +48,7 @@
                 </div>
 
             </li>
+      </a>
         {{end}}
     </ul>
   </div>

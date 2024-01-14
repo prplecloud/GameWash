@@ -35,22 +35,26 @@
       <div class="scroll-indicator-bar"></div>
     </div>
   </header>
-  
+
   <section class="home">
-    <h1>Résultats de la recherche</h1>
-    <ul>
+    <div class="articles">
+      <ul>
         {{range .}}
-            <li>
-                <p><strong>Catégorie:</strong> {{.Categorie}} </p>
-              <p>  <strong>Auteur:</strong> {{.Auteur}} </p>
-                <p>{{.Introduction}}</p>
-                <p>{{.Texte}}</p>
-                <p>Image : {{.Images}}</p>
+        <a href="/article?id={{.ID}}">
+          <li class="articleuni" onclick="afficherParagraphe()">
+            <img class="image" id="images" src="/static/uploads/{{.Images}}" >
+            <p class="intro">{{.Introduction}}</p>
+            <p class="auteur">  <strong>Auteur:</strong> {{.Auteur}} </p>
+            <div class="content" id="txthide" style="opacity: 0;">
+              <p  id="hidden-paragraph">{{.Texte}}</p>
 
-            </li>
+            </div>
+
+          </li>
+        </a>
         {{end}}
-    </ul>
-
+      </ul>
+    </div>
   </section>
 
   <section class="content">   
