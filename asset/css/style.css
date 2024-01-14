@@ -21,6 +21,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins',sans-serif;
+    text-decoration: none;
+    color: #fff;
 }
 
 body{
@@ -440,6 +442,7 @@ footer {
     width: 100%;
     text-wrap: wrap;
     margin-bottom: 1vh;
+    text-decoration: none;
 }
 
 .articleuni > p{
@@ -465,9 +468,24 @@ footer {
 
 .intro {
     padding-left: 2rem;
-   
+    text-decoration: none;
+    padding-top: 2vh;
 }
 
 .auteur {
     padding-left: 2rem;
+    text-decoration: none;
+    padding-top: 2vh;
+}
+
+input{
+    color: white;
+    border-radius: 15px;
+    padding: 3px;
+    background-color: #B895B0;
+}
+
+.contenn{
+    font-size: 2vh;
+    padding: 1rem;
 }
