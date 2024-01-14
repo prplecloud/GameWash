@@ -1,5 +1,6 @@
 [
   {
+    "id":1,
     "categorie": "Compétitif",
     "titre": "Teamfight Tactics",
     "auteur": "Riot Games",
@@ -7,6 +8,7 @@
     "images" : "default.png"
   },
   {
+    "id":2,
     "categorie": "Compétitif",
     "titre": "Rainbow Six Siege",
     "auteur": "Ubisoft",
@@ -14,6 +16,7 @@
     "images" : "default.png"
   },
   {
+    "id":3,
     "categorie": "Compétitif",
     "titre": "League of Legends",
     "auteur": "Riot Games",
@@ -21,13 +24,15 @@
     "images" : "default.png"
   },
   {
+    "id":4,
     "categorie": "Compétitif",
     "titre": "Counter-Strike: Global Offensive",
     "auteur": "Valve Corporation",
-    "contenu": "...",
+    "contenu": "Counter-Strike: Global Offensive (CS:GO), développé par Valve Corporation, demeure un pilier du genre des jeux de tir à la première personne compétitifs. Depuis sa sortie en 2012, CS:GO s'est imposé comme une référence en matière de précision, de stratégie et de compétition.\n\nAu cœur de l'expérience CS:GO se trouvent la précision des tirs et la stratégie tactique. Les joueurs s'affrontent en équipes, incarnant soit les terroristes, chargés de poser des bombes, soit les contre-terroristes, cherchant à les en empêcher. Chaque balle compte, et la coordination d'équipe est cruciale pour la victoire.\n\nLa scène compétitive de CS:GO est un spectacle à part entière. Des tournois mondiaux majeurs aux ligues régionales, les équipes professionnelles rivalisent pour la suprématie. Les compétitions féroces, les moments emblématiques et la loyauté des fans ont solidifié la position de CS:GO au sommet de l'esport.\n\nValve Corporation a su maintenir la pertinence de CS:GO au fil des ans en introduisant des mises à jour régulières. De nouvelles cartes, des ajustements d'équilibrage et des modes de jeu innovants ajoutent constamment de la variété. La communauté active participe également à la création de contenu à travers le Steam Workshop.\n\nCS:GO place l'accent sur l'esprit d'équipe et la communication. La coordination des tactiques, la gestion des ressources, et la prise de décision rapide sont les clés du succès. Les équipes qui excellent dans ces aspects tirent le meilleur parti de chaque manche.\n\nBien que sorti en 2012, CS:GO conserve un aspect graphique solide. La conception des armes, des cartes et des modèles de personnages offre une esthétique intemporelle. Le réalisme des armes et des mouvements contribue à l'immersion des joueurs.\n\nCounter-Strike: Global Offensive incarne la quintessence du jeu de tir compétitif. Avec son gameplay centré sur la précision, ses compétitions passionnantes et sa communauté dévouée, CS:GO continue de régner en tant que maître incontesté du genre. Que vous soyez un vétéran chevronné ou un nouveau joueur, CS:GO offre une expérience de jeu palpitante et compétitive qui perdure au fil des années.",
     "images" : "default.png"
   },
   {
+    "id":5,
     "categorie": "Compétitif",
     "titre": "The Finals",
     "auteur": "Embark",
@@ -35,6 +40,7 @@
     "images" : "default.png"
   },
   {
+    "id":6,
     "categorie": "Compétitif",
     "titre": "Escape from Tarkov",
     "auteur": "Battlestate Games",
@@ -42,6 +48,7 @@
     "images" : "default.png"
   },
   {
+    "id":7,
     "categorie": "Compétitif",
     "titre": "FIFA 24",
     "auteur": "EA Sports",
@@ -49,6 +56,7 @@
     "images" : "default.png"
   },
   {
+    "id":8,
     "categorie": "Coups de coeur",
     "titre": "Outer Wilds",
     "auteur": "Mobius Digital",
@@ -56,6 +64,7 @@
     "images" : "default.png"
   },
   {
+    "id":9,
     "categorie": "Jeux en vrac",
     "titre": "Dark Souls 3",
     "auteur": "FromSoftware",
@@ -63,6 +72,7 @@
     "images" : "default.png"
   },
   {
+    "id":10,
     "categorie": "Coups de coeur",
     "titre": "Elden Ring",
     "auteur": "FromSoftware",
@@ -70,6 +80,7 @@
     "images" : "default.png"
   },
   {
+    "id":11,
     "categorie": "Jeux en vrac",
     "titre": "Stardew Valley",
     "auteur": "ConcernedApe",
@@ -77,6 +88,7 @@
     "images" : "default.png"
   },
   {
+    "id":12,
     "categorie": "Jeux en vrac",
     "titre": "Minecraft",
     "auteur": "Mojang Studios",
@@ -84,6 +96,7 @@
     "images" : "default.png"
   },
   {
+    "id":13,
     "categorie": "Jeux en vrac",
     "titre": "Roblox",
     "auteur": "Roblox Corporation",
@@ -91,6 +104,7 @@
     "images" : "default.png"
   },
   {
+    "id":14,
     "categorie": "Jeux en vrac",
     "titre": "Geometry Dash",
     "auteur": "RobTop Games",
@@ -98,6 +112,7 @@
     "images" : "default.png"
   },
   {
+    "id":15,
     "categorie": "Coups de coeur",
     "titre": "Majoras Mask",
     "auteur": "Nintendo",
@@ -105,6 +120,7 @@
     "images" : "default.png"
   },
   {
+    "id":16,
     "categorie": "Coups de coeur",
     "titre": "Subnautica",
     "auteur": "Unknown Worlds Entertainment",
@@ -112,6 +128,7 @@
     "images" : "default.png"
   },
   {
+    "id":17,
     "categorie": "Jeux en vrac",
     "titre": "Slime Rancher",
     "auteur": "Monomi Park",
@@ -119,6 +136,7 @@
     "images" : "default.png"
   },
   {
+    "id":18,
     "categorie": "Coups de coeur",
     "titre": "Pokémon Noir 2",
     "auteur": "Game Freak",
@@ -126,6 +144,7 @@
     "images" : "default.png"
   },
   {
+    "id":19,
     "categorie": "Jeux en vrac",
     "titre": "Destiny 1",
     "auteur": "Bungie",
@@ -133,6 +152,7 @@
     "images" : "default.png"
   },
   {
+    "id":20,
     "categorie": "Coups de coeur",
     "titre": "Mario Kart",
     "auteur": "Nintendo",
@@ -140,6 +160,7 @@
     "images" : "default.png"
   },
   {
+    "id":21,
     "categorie": "Jeux en vrac",
     "titre": "The Legend of Zelda: Ocarina of Time",
     "auteur": "Nintendo",
@@ -147,6 +168,7 @@
     "images" : "default.png"
   },
   {
+    "id":22,
     "categorie": "Jeux en vrac",
     "titre": "The Legend of Zelda: A Link to the Past",
     "auteur": "Nintendo",
@@ -154,6 +176,7 @@
     "images" : "default.png"
   },
   {
+    "id":23,
     "categorie": "Coups de coeur",
     "titre": "Super Mario 64",
     "auteur": "Nintendo",
@@ -161,6 +184,7 @@
     "images" : "default.png"
   },
   {
+    "id":24,
     "categorie": "Jeux en vrac",
     "titre": "Sonic Unleashed",
     "auteur": "Sega",
@@ -168,6 +192,7 @@
     "images" : "default.png"
   },
   {
+    "id":25,
     "categorie": "Compétitif",
     "titre": "Super Smash Bros.",
     "auteur": "Nintendo",
@@ -175,6 +200,7 @@
     "images" : "default.png"
   },
   {
+    "id":26,
     "categorie": "Compétitif",
     "titre": "Black Ops 2",
     "auteur": "Activision",
@@ -182,6 +208,7 @@
     "images" : "default.png"
   },
   {
+    "id":27,
     "categorie": "Compétitif",
     "titre": "Rocket League",
     "auteur": "Psyonix",
@@ -189,6 +216,7 @@
     "images" : "default.png"
   },
   {
+    "id":28,
     "categorie": "Coups de coeur",
     "titre": "GTA V",
     "auteur": "Rockstar Games",
@@ -196,6 +224,7 @@
     "images" : "default.png"
   },
   {
+    "id":29,
     "categorie": "Coups de coeur",
     "titre": "No Man's Sky",
     "auteur": "Hello Games",
@@ -203,6 +232,7 @@
     "images" : "default.png"
   },
   {
+    "id":30,
     "categorie": "Coups de coeur",
     "titre": "Bully",
     "auteur": "Rockstar Games",
