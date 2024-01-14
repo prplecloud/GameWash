@@ -1,3 +1,4 @@
+package TP-BLOG
 
 func rechercheTitre(file string, substr string) ([]Form, error) {
 	var articles []Form
