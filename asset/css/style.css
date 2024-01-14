@@ -140,7 +140,7 @@ section{
 .home{
     position: relative;
     background-color: #d2abca;
-    min-height: 100vh;
+    min-height: 10vh;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -439,7 +439,7 @@ footer {
     height: 30vh;
     width: 100%;
     text-wrap: wrap;
-    margin-bottom: 3vh;
+    margin-bottom: 1vh;
 }
 
 .articleuni > p{
