@@ -260,7 +260,7 @@ func getRandomArticles(liste []Form, nombreElements int) []Form {
 }
 
 func LoadArticlesByCategory(category string) ([]Form, error) {
-	fileData, err := ioutil.ReadFile("data.json")
+	fileData, err := os.ReadFile("data.json")
 	if err != nil {
 		return nil, err
 	}
