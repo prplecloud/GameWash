@@ -1,4 +1,4 @@
-{{define "compet"}}
+{{define "result"}}
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -21,8 +21,10 @@
           <a href="http://localhost:8080/vrac"><i class="uil uil-folden-open"></i>Jeux en Vrac</a>
           <a href="http://localhost:8080/coeur"><i class="uil uil-heart-sign"></i>Coup de coeur</a>
           <a href="http://localhost:8080/login"><i class="uil uil-head-side"></i>Login</a>
+          <form action="/result" method="get">
+            <input class="input" type="search" name="content" placeholder="Rechercher" />
+        </form>
           <div class="search-box">
-            <input class="search-txt" type="text" name="" placeholder="Tape ta recherche">
             <button class="loupebtn" type="submit"><img class="loupe" src="static/image/loupe.png"></button>		<!-- Création d'une barre pour taper du texte que j'ai nommé "search-txt" et j'ai fait afficher "Tape ta recherche" dans la barre lorsque la barre est vide -->
           </div>
         </div>
@@ -35,22 +37,20 @@
   </header>
   
   <section class="home">
-    <div class="articles">
+    <h1>Résultats de la recherche</h1>
     <ul>
         {{range .}}
-          <li class="articleuni" onclick="afficherParagraphe()">
-              <img class="image" id="images" src="/static/uploads/{{.Images}}" >
-              <p class="intro">{{.Introduction}}</p>
-              <p class="auteur">  <strong>Auteur:</strong> {{.Auteur}} </p>
-                <div class="content" id="txthide" style="opacity: 0;">
-                <p  id="hidden-paragraph">{{.Texte}}</p>
-                  
-                </div>
+            <li>
+                <p><strong>Catégorie:</strong> {{.Categorie}} </p>
+              <p>  <strong>Auteur:</strong> {{.Auteur}} </p>
+                <p>{{.Introduction}}</p>
+                <p>{{.Texte}}</p>
+                <p>Image : {{.Images}}</p>
 
             </li>
         {{end}}
     </ul>
-  </div>
+
   </section>
 
   <section class="content">   
@@ -58,22 +58,7 @@
 
   </section>
 
-  <script> 
-
-function afficherParagraphe() {
-            var paragraph = document.getElementById("hidden-paragraph");
-            paragraph.style.display = "block";
-            var image = document.getElementById("images");
-            var tailleActuelle = window.getComputedStyle(image, null).getPropertyValue("width");
-            if (tailleActuelle == "20%") {
-              image.style.width = "100%";
-            
-            }else {
-              image.style.width = "20%";
-            }
-        }
-
-
+  <script>
     window.addEventListener("scroll", () => {
       const indicatorBar = document.querySelector(".scroll-indicator-bar");
 
