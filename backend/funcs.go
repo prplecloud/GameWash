@@ -1,20 +1,5 @@
 package TP-BLOG
 
-import (
-	"encoding/json"
-	"fmt"
-	"html/template"
-	"io"
-	"io/fs"
-	"io/ioutil"
-	"math/rand"
-	"net/http"
-	"os"
-	"strings"
-	"time"
-)
-
-
 func rechercheTitre(file string, substr string) ([]Form, error) {
 	var articles []Form
 
