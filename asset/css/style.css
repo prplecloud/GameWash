@@ -140,7 +140,7 @@ section{
 .home{
     position: relative;
     background-color: #d2abca;
-    min-height: 100vh;
+    min-height: 10vh;
     display: flex;
     justify-content: center;
     flex-direction: row;
@@ -430,14 +430,16 @@ footer {
 .articleuni {
     border: solid #B895B0 6px;
     border-radius: 15px;
-    padding: 10px;
-    margin-bottom: 30px;
-    width: 100%;
+    padding: 20px;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
     animation: zoomOut 0.5s ease 0s 1 normal backwards;
-    font-size: 2.5vh;
+    font-size: 2vh;
     cursor: pointer;
+    height: 30vh;
+    width: 100%;
+    text-wrap: wrap;
+    margin-bottom: 1vh;
 }
 
 .articleuni > p{
@@ -457,6 +459,15 @@ footer {
 
  .image{
     max-width: 20%;
+    max-height: 25vh;
 }
 
 
+.intro {
+    padding-left: 2rem;
+   
+}
+
+.auteur {
+    padding-left: 2rem;
+}
