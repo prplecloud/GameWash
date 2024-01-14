@@ -6,10 +6,10 @@ import (
 	"html/template"
 	"io"
 	"io/fs"
-	"io/ioutil"
 	"math/rand"
 	"net/http"
 	"os"
+	"strconv"
 	"strings"
 	"time"
 )
@@ -29,6 +29,7 @@ type Form struct {
 	Introduction string `json:"introduction"`
 	Texte        string `json:"texte"`
 	Images       string `json:"images"`
+	ID           int    `json: id`
 }
 
 func main() {
@@ -94,10 +95,6 @@ func main() {
 		temp.ExecuteTemplate(w, "contact", nil)
 	})
 
-	http.HandleFunc("/error", func(w http.ResponseWriter, r *http.Request) {
-		temp.ExecuteTemplate(w, "error", nil)
-	})
-
 	http.HandleFunc("/about", func(w http.ResponseWriter, r *http.Request) {
 		temp.ExecuteTemplate(w, "about", nil)
 	})
@@ -107,6 +104,8 @@ func main() {
 	})
 
 	http.HandleFunc("/form/treatment", FormSubmission)
+
+	http.HandleFunc("/form/delete", DeletePage)
 
 	rootDoc, _ := os.Getwd()
 	fileserver := http.FileServer(http.Dir(rootDoc + "/asset"))
@@ -151,6 +150,8 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
 	File, errOpen := os.OpenFile(("./asset/uploads/" + headerFile.Filename), os.O_CREATE, 0644)
 	if errOpen != nil {
+		fmt.Println("Erreur lors de l'ouverture :", err)
+		return
 
 	}
 
@@ -158,6 +159,8 @@ func FormSubmission(w http.ResponseWriter, r *http.Request) {
 
 	_, errCopy := io.Copy(File, dataFile)
 	if errCopy != nil {
+		fmt.Println("Erreur lors de la copie :", err)
+		return
 	}
 
 	// Créer une nouvelle instance de Form à partir des données du formulaire
@@ -220,7 +223,7 @@ func ShowArticles(w http.ResponseWriter, r *http.Request) {
 }
 
 func LoadArticles() ([]Form, error) {
-	fileData, err := ioutil.ReadFile("data.json")
+	fileData, err := os.ReadFile("data.json")
 	if err != nil {
 		return nil, err
 	}
@@ -258,7 +261,8 @@ func getRandomArticles(liste []Form, nombreElements int) []Form {
 }
 
 func LoadArticlesByCategory(category string) ([]Form, error) {
-	fileData, err := ioutil.ReadFile("data.json")
+
+	fileData, err := os.ReadFile("data.json")
 	if err != nil {
 		return nil, err
 	}
@@ -281,6 +285,7 @@ func LoadArticlesByCategory(category string) ([]Form, error) {
 }
 
 func rechercheTitre(file string, substr string) ([]Form, error) {
+
 	var articles []Form
 
 	data, err := os.ReadFile(file)
@@ -302,4 +307,71 @@ func rechercheTitre(file string, substr string) ([]Form, error) {
 	}
 
 	return result, nil
+}
+
+var temp *template.Template
+
+func DefaultHandler(w http.ResponseWriter, r *http.Request) {
+
+	w.WriteHeader(http.StatusNotFound)
+
+	// Charger la page d'erreur
+	err := temp.ExecuteTemplate(w, "erreur", nil)
+	if err != nil {
+		http.Error(w, "Erreur interne du serveur", http.StatusInternalServerError)
+		return
+	}
+}
+
+func DeletePage(w http.ResponseWriter, r *http.Request) {
+
+	if r.Method == http.MethodPost {
+		// Récupérer l'ID de l'article à supprimer depuis le formulaire
+		articleID := r.FormValue("id")
+
+		// Convertir l'ID en entier
+		_, err := strconv.Atoi(articleID)
+		if err != nil {
+			http.Error(w, "ID d'article invalide", http.StatusBadRequest)
+			return
+		}
+
+		// Charger les articles existants
+		articles, err := LoadArticles()
+		if err != nil {
+			http.Error(w, "Erreur lors du chargement des articles", http.StatusInternalServerError)
+			return
+		}
+
+		// Rechercher et supprimer l'article correspondant
+		found := false
+		for i, article := range articles {
+			if articleID == strconv.Itoa(article.ID) {
+				articles = append(articles[:i], articles[i+1:]...)
+				found = true
+				break
+			}
+		}
+
+		if !found {
+			http.Error(w, "Article non trouvé", http.StatusNotFound)
+			return
+		}
+
+		// Mettre à jour le fichier JSON
+		dataWrite, err := json.MarshalIndent(articles, "", "  ")
+		if err != nil {
+			http.Error(w, "Erreur lors de la sérialisation des articles", http.StatusInternalServerError)
+			return
+		}
+
+		err = os.WriteFile("data.json", dataWrite, fs.FileMode(0644))
+		if err != nil {
+			http.Error(w, "Erreur lors de l'écriture du fichier JSON", http.StatusInternalServerError)
+			return
+		}
+
+		// Rediriger vers la page d'administration
+		http.Redirect(w, r, "/admin", http.StatusSeeOther)
+	}
 }

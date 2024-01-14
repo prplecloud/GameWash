@@ -42,6 +42,12 @@
 
         <button type="submit">Publier</button>
     </form>
+
+    <form action="/form/delete" method="post" onsubmit="return confirmDelete()">
+        <input type="hidden" name="article_id" value="{{ .Id }}">
+        <input type="submit" class="delete-button" value="">
+    </form>
+
 </body>
 </html>
 {{end}}
