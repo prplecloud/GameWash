@@ -285,7 +285,7 @@ func LoadArticlesByCategory(category string) ([]Form, error) {
 func rechercheTitre(file string, substr string) ([]Form, error) {
 	var articles []Form
 
-	data, err := ioutil.ReadFile(file)
+	data, err := os.ReadFile(file)
 	if err != nil {
 		return nil, err
 	}
